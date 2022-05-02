@@ -1,0 +1,326 @@
+@font-face {
+    font-family: 'PT Sans Narrow Bold';
+    src: url('../assets/fonts/ptsansnarrow-bold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/ptsansnarrow-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Sans Narrow';
+    src: url('../assets/fonts/ptsansnarrow-regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/ptsansnarrow-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, ::after, ::before, button {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol, a {
+    text-decoration: none;
+    list-style: none;
+    color: rgb(30,30,30);
+    font-family: 'PT Sans Narrow', Helvetica, sans-serif;
+}
+
+body {
+    position: relative;
+    max-width: 1920px;
+    min-width: 320px;
+    margin: 0 auto;
+    font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+    color: rgb(30,30,30);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    border-left: 1px solid rgba(30, 30, 30, .2);
+    border-right: 1px solid rgba(30, 30, 30, .2);
+    cursor: inherit;
+}
+
+/*Scrollbar----------------------------------*/
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(30, 30, 30) rgb(255, 255, 255, .2);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .2);
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(30, 30, 30);
+}
+
+::selection {
+    background-color: #140B6E;
+    color: white;
+}
+
+/*HEADER-------------------------------------------------*/
+header {
+    position: relative;
+    z-index: 1000;
+    position: fixed;
+    width: 252px;
+    min-height: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0 0 25px;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 3px 0 5px rgba(30, 30, 30, .2);
+    overflow: auto;
+    font-size: 1.05em;
+    font-weight: 400;
+    transition: 400ms;
+}
+
+header .reseaux {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+
+.logo {
+    display: flex;
+    margin-left: -25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    width: 150px;
+}
+
+nav {
+    cursor: pointer;
+    margin-top: 100px;
+}
+
+li {
+    cursor: pointer;
+    display: block;
+    width: max-content;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    overflow: hidden;
+    width: max-content;
+    max-width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.menu li a {
+    cursor: pointer;
+}
+
+li:hover {
+    font-size: 1.3em;
+}
+
+#links {
+    padding-left: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+
+#links a {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    width: max-content;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+#links a:hover {
+    color: #0A66C2;
+}
+
+#links a svg {
+    margin-right: 5px;
+}
+
+#type-projets {
+    height: max-content;
+}
+
+#type-projets div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 36px;
+    font-size: .9em;
+    margin: 8px 0;
+}
+
+#type-projets div button {
+    font-weight: 400;
+}
+
+#type-projets div button:hover {
+    font-weight: 600;
+}
+
+header .reseaux a:hover {
+    color: #0A66C2;
+}
+
+.oda {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% + 25px);
+    margin-left: -25px;
+}
+
+.oda img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    opacity: .8;
+}
+
+/*-MAIN------------------------------------------*/
+
+main {
+    position: relative;
+    min-height: calc(100vh - 69px);
+    height: 100%;
+    width: 100%;
+    padding-left: 252px;
+}
+
+.croix, .textfermer {
+    display: none;
+}
+
+.barre, .croix, .textmenu, .textfermer, .btnMenuSvg {
+    transition: 400ms;
+}
+
+
+
+/*-FOOTER--------------------------------------*/
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px 0 300px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    height: 69px;
+    min-height: 50px;
+    width: 100%;
+    font-size: .9em;
+    z-index: 1000;
+}
+
+footer div a {
+    font-weight: 500;
+}
+
+.mentions a, footer div a {
+    height: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.mentions a:hover, footer div a:hover {
+    border-bottom: 1px solid rgb(255, 255, 255, .4);
+}
+
+.footerLinks {
+    width: 220px;
+    height: 100%;
+    max-height: 70px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerLinks a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: max-content;
+}
+
+/*-ELEMENT-RESPONSIVE--------------------------------------*/
+.btnMenu {
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    right: 8px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+}
+
+.btnMenu div.btnMenuSvg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: 34px;
+    margin-bottom: 5px;
+}
+
+.croix, .barre {
+    height: 100%;
+    width: 100%;
+}
+
+.btnMenu div.btnMenuText {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.crux {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(30, 30, 30, 0.4);
+    transition: 150ms;
+    opacity: 0;
+}
+
+.none {
+    display: none;
+    visibility: hidden;
+}

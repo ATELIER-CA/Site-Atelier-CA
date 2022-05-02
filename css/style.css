@@ -1,0 +1,118 @@
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+.slider {
+    position: absolute;
+    overflow: hidden;
+    height: 100vh;
+    width: 900%;
+    display: flex;
+    left: 0;
+    animation: sliderAuto 32s 2s ease-in infinite;
+}
+
+.slide {
+    overflow: hidden;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.slide img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes sliderAuto {
+    0% {
+        left: 0;
+    }
+    9% {
+        left: 0;
+    }
+    12.5% {
+        left: -100%;
+    }
+    21.5% {
+        left: -100%;
+    }
+    25% {
+        left: -200%;
+    }
+    34% {
+        left: -200%;
+    }
+    37.5% {
+        left: -300%;
+    }
+    46.5% {
+        left: -300%;
+    }
+    50% {
+        left: -400%;
+    }
+    59% {
+        left: -400%;
+    }
+    62.5% {
+        left: -500%;
+    }
+    71.5% {
+        left: -500%;
+    }
+    75% {
+        left: -600%;
+    }
+    84% {
+        left: -600%;
+    }
+    87.5% {
+        left: -700%;
+    }
+    96.5% {
+        left: -700%;
+    }
+    100% {
+        left: -800%;
+    }
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 66px);
+    width: 95%;
+    margin: 0 auto;
+}
+
+.description section {
+    min-height: 35vh;
+    max-height: min-content;
+    min-width: 310px;
+}
+
+.description section h2, .description section h1 {
+    display: block;
+    width: max-content;
+    margin: 22px 0;
+    font-size: 3em;
+}
+
+.description section p {
+    display: block;
+    text-align: justify;
+    width: 95%;
+    line-height: 1.5em;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}

@@ -1,0 +1,93 @@
+.agence {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 35px;
+}
+
+.agence section {
+    min-height: 35vh;
+    max-height: min-content;
+    min-width: 310px;
+}
+
+.agence section h2 {
+    display: block;
+    width: max-content;
+    margin: 22px 0;
+    font-size: 3em;
+}
+
+.agence section p {
+    display: block;
+    text-align: justify;
+    width: 100%;
+    line-height: 1.5em;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.agence .employees {
+    height: auto;
+    width: 100%;
+    min-width: 480px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    margin-bottom: 20px;
+}
+
+.profil {
+    padding: 20px;
+    background-color: whitesmoke;
+    overflow: hidden;
+    width: 30%;
+    min-width: 358px;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 0 5px 2px rgba(30, 30, 30, .1);
+    margin: 0 25px 15px 0;
+}
+
+.profil img {
+    height: 180px;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 15px;
+    box-shadow: 0 0 5px 1px rgba(30, 30, 30, .1);
+}
+
+.profil h3 {
+    margin: 10px 0;
+}
+
+.profil div {
+    width: 100%;
+}
+
+#unorderListText {
+    margin: 0;
+}
+
+#unorderListText li {
+    cursor: initial;
+    list-style: inside;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+#unorderListText li {
+    margin-left: 20px;
+}
+
+#unorderListText li:nth-child(1) {
+    margin-left: 0px;
+}

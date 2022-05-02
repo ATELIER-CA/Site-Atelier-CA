@@ -1,0 +1,141 @@
+.le-projet {
+    width: 100%;
+}
+
+div .le-projet h1 {
+    width: auto;
+    padding-top: 22px;
+    margin-bottom: 22px;
+    font-size: 3em;
+}
+
+div .le-projet .bloc-projet-description {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.25em;
+    height: max-content;
+}
+
+div .le-projet .bloc-projet-description .projet-info {
+    width: auto;
+    height: max-content;
+    margin-right: 100px;
+}
+
+div .le-projet .bloc-projet-description .la-description {
+    width: max-content;
+    max-width: 600px;
+    height: 250px;
+    height: max-content;
+    text-align: justify;
+}
+
+div .le-projet .bloc-projet-description div p {
+    margin-bottom: 5px;
+}
+
+div .le-projet .bloc-projet-description div p:last-child {
+    margin-bottom: 25px;
+}
+
+div .le-projet div p span {
+    font-weight: 600;
+}
+
+#main-projet {
+    display: flex;
+    flex-direction: column;
+    width: 77%;
+    margin: 0 auto;
+}
+
+#main-projet .bloc-img {
+    margin-top: 35px;
+    padding-bottom: 45px;
+}
+
+#main-projet .bloc-img img {
+    margin-bottom: 25px;
+    margin-right: 10px;
+    height: auto;
+    max-height: 90vh;
+    width: auto;
+    max-width: calc(100%);
+    object-fit: contain;
+    object-position: center;
+}
+
+#back, #backBottom, #tri button {
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+    border: 1px solid #333333;
+    font-weight: 500;
+    background-color: #FFFFFF;
+    height: max-content;
+    width: max-content;
+    padding: 10px 15px;
+    border-radius: 2px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#back svg, #backBottom svg {
+    height: 16px;
+    margin-right: 5px;
+}
+
+#back:hover, #backBottom:hover {
+    box-shadow: 1px 1px black;
+}
+
+#back:active, #backBottom:active {
+    box-shadow: none;
+}
+
+#projects {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+#projects a {
+    margin-bottom: 10px;
+}
+
+#projects button {
+    cursor: pointer;
+    background-color: transparent;
+    font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: #333333;
+    font-size: 1em;
+    margin-left: 15px;
+    padding: 2px 7px;
+    border: none;
+}
+
+#projects button:hover, #projects button.active {
+    background-color: #140B6E;
+    color: white;
+}
+
+li:nth-child(3):hover {
+    font-size: 1.2em;
+}
+
+li:nth-child(3) a:hover {
+    font-size: 1.1em;
+}
+
+.none {
+    display: none;
+    visibility: hidden;
+}
+
+.active {
+    display: flex;
+    visibility: visible;
+}
