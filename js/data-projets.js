@@ -310,18 +310,6 @@ const projets = [
     type: "INDUSTRIEL",
     photos:["cdce202101", "cdce202102", "cdce202103", "cdce202104", "cdce202105", "cdce202106", "cdce202107"],
     image: "cdce202100",
-    },
-    {
-    id: 27,
-    title: "test",
-    lieu: "Saint-Mexant (19)",
-    calendar: "Livré en 2022",
-    moa: "Cessac Emballages",
-    budget: "950 000 € TTC",
-    surface: "900 m²",
-    type: "INDUSTRIEL",
-    photos:["01 KILIAN-01"],
-    image: "01 KILIAN-01",
     }
 ];
 
