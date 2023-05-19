@@ -9,5 +9,5 @@
 <br>
 
 <div align="center">
-  <img width="600px" src="./assets/images/atelier-caa.jpg" alt="Logo COSSET ARCHITECTES ASSOCIES">
+  <img width="1000px" src="./assets/images/atelier-caa.jpg" alt="Logo COSSET ARCHITECTES ASSOCIES">
 </div>
