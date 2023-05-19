@@ -13,6 +13,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Century Gothic Regular';
+    src: url('../assets/fonts/centurygothic-webfont.woff2') format('woff2'),
+         url('../assets/fonts/centurygothic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 *, ::after, ::before, button {
     box-sizing: border-box;
     padding: 0;
@@ -23,15 +33,18 @@ ul, ol, a {
     text-decoration: none;
     list-style: none;
     color: rgb(30,30,30);
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'PT Sans Narrow', Helvetica, sans-serif;
 }
 
 body {
     position: relative;
-    max-width: 1920px;
     min-width: 320px;
     margin: 0 auto;
-    font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+    font-family: 'PT Sans Narrow', Helvetica, sans-serif;
+    font-size: .9em;
     color: rgb(30,30,30);
     overflow-x: hidden;
     overflow-y: scroll;
@@ -40,6 +53,7 @@ body {
     border-left: 1px solid rgba(30, 30, 30, .2);
     border-right: 1px solid rgba(30, 30, 30, .2);
     cursor: inherit;
+    border: 0px solid transparent !important;
 }
 
 /*Scrollbar----------------------------------*/
@@ -110,12 +124,13 @@ header .reseaux {
     display: block;
     object-fit: cover;
     object-position: center;
-    width: 150px;
+    width: 200px;
 }
 
 nav {
     cursor: pointer;
-    margin-top: 100px;
+    margin-top: 140px;
+    font-size: 1em !important;
 }
 
 li {
@@ -318,6 +333,14 @@ footer div a {
     background-color: rgba(30, 30, 30, 0.4);
     transition: 150ms;
     opacity: 0;
+}
+
+.description section p, 
+.agence section p,
+.agence section ul,
+#contact .bloc-info .info p,
+#mentions .articles p {
+    font-family: 'Century Gothic Regular', Helvetica, sans-serif;
 }
 
 .none {
