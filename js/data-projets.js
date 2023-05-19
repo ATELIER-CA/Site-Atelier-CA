@@ -296,7 +296,7 @@ const projets = [
     budget: "2 100 000 € HT",
     surface: "2 390 m²",
     type: "EDUCATION",
-    photos:["ln202101", "ln202102", "ln202103"],
+    photos:["ln202104", "ln202105", "ln202109", "ln202106", "ln202107", "ln202108", "ln202110", "ln202111", "ln202112", "ln202113"],
     image: "ln202100",
     },
     {
@@ -308,7 +308,7 @@ const projets = [
     budget: "950 000 € TTC",
     surface: "900 m²",
     type: "INDUSTRIEL",
-    photos:["cdce202101", "cdce202102", "cdce202103", "cdce202104", "cdce202105", "cdce202106", "cdce202107"],
+    photos:["cdce202108", "cdce202110", "cdce202109", "cdce202111", "cdce202112", "cdce202101", "cdce202102", "cdce202103", "cdce202104", "cdce202105", "cdce202106", "cdce202107"],
     image: "cdce202100",
     },
     {
