@@ -310,6 +310,23 @@ const projets = [
     type: "INDUSTRIEL",
     photos:["cdce202101", "cdce202102", "cdce202103", "cdce202104", "cdce202105", "cdce202106", "cdce202107"],
     image: "cdce202100",
+    },
+    {
+    id: 27,
+    title: "REHABILITATION DE LA BOITE EN ZINC",
+    lieu: "Chanteix (19)",
+    calendar: "En cours",
+    moa: "Commune de Chanteix",
+    budget: "1 080 000 € TTC",
+    surface: "600 m²",
+    desc: `Le projet de requalification de « La Boîte en Zinc » à Chanteix vise à redéfinir l'image de la commune. La démolition de la maison voisine, appelée « Maison Poumier », permettra de libérer de l'espace et de donner plus de visibilité à cet équipement public, renforçant ainsi sa présence dans le bourg. Le projet comprend un nouveau parvis ainsi qu’un espace vert, en prolongement des espaces intérieurs.<br>
+    Le projet s'inspire du patrimoine local en utilisant des matériaux recyclés issus de la démolition, tels que les pierres et les ardoises, pour créer un « socle » harmonieux avec l'environnement. L'extension s'intègre dans le tissu bâti existant et se compose d’un nouveau volume en zinc relié à la salle polyvalente par un volume intermédiaire de dimensions réduites. L'objectif est de maintenir une architecture à l'échelle du bourg de Chanteix.<br>
+    L’aménagement du parvis, partiellement abrité, offrira des espaces d’ombres, et mettra en valeur les éléments du patrimoine local tels que les murets et le puits existant, qui servira de totem signal pour annoncer les événements de la commune.<br>
+    L'agrandissement de la salle polyvalente permettra d'améliorer considérablement ce lieu de rassemblement et de renforcer le lien social dans le territoire local. La séparation fonctionnelle des espaces permettra une meilleure fonctionnalité et utilisation de l'équipement, offrant une plus grande diversité d’usages. Le projet prend en compte les principes du développement durable par l’utilisation du bois dans son enveloppe ainsi que dans l’aménagement des locaux intérieurs. L'aspect esthétique et moderne du bâtiment contribuera à améliorer l'image de cet équipement et de la commune dans son ensemble, renforçant ainsi son attractivité.
+    `,
+    type: "EQUIPEMENTS",
+    photos:["bez202301", "bez202302", "bez202303", "bez202304", "bez202305", "bez202306", "bez202307", "bez202308"],
+    image: "bez202300",
     }
 ];
 
