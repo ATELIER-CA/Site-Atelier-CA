@@ -20,7 +20,29 @@ allProjetsBtn.click();
 function createInfo() {
     let projetInfo = document.createElement('section');
     projetInfo.classList.add("le-projet");
-    projetInfo.innerHTML = `
+
+    if(projets[idProject].desc) {
+        projetInfo.innerHTML = `
+        <h1>${projets[idProject].title}</h1>
+        <div class="bloc-projet-description">
+            <div class="projet-info">
+                <p><span>Lieu : </span>${projets[idProject].lieu}</p> 
+                <p><span>Calendrier : </span>${projets[idProject].calendar}</p>
+                <p><span>Maître d'ouvrage : </span>${projets[idProject].moa}</p>
+                <p><span>Budget : </span>${projets[idProject].budget}</p>
+                <p><span>Surface : </span>${projets[idProject].surface}</p>
+                <p class="desc">${projets[idProject].desc}</p>
+            </div>
+
+        </div>
+        <a id="back" href="./nos-projets.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"/>
+        </svg>
+            RETOUR AUX PROJETS
+        </a>
+    `;
+    } else {
+        projetInfo.innerHTML = `
         <h1>${projets[idProject].title}</h1>
         <div class="bloc-projet-description">
             <div class="projet-info">
@@ -31,9 +53,6 @@ function createInfo() {
                 <p><span>Surface : </span>${projets[idProject].surface}</p>
             </div>
 
-            <div class="la-description">
-                <p>${projets[idProject].description}</p>
-            </div>
         </div>
         <a id="back" href="./nos-projets.html">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"/>
@@ -41,19 +60,10 @@ function createInfo() {
             RETOUR AUX PROJETS
         </a>
     `;
-    main.appendChild(projetInfo)
-
-
-    const description = document.querySelector(".la-description");
-
-    if(!projets[idProject].description === undefined) {
-        let desc = document.createElement('p');
-        desc.innerHTML = `${projets[idProject].description}`;
-
-        description.appendChild(desc);
-    } else {
-        description.classList.add('none');
     }
+
+
+    main.appendChild(projetInfo)
 };
 
 function crateGalerie() {
@@ -63,11 +73,17 @@ function crateGalerie() {
     const gallery = projets[idProject].photos;
     let textImg = "";
 
-    for(let i = 0; i < gallery.length; i++) {
+    if(projets[idProject].video) {
+        textImg = `
+        <video controls autoplay loop muted controlsList="nodownload" title="Vidéo du projet ${projets[idProject].title}">
+            <source src="./assets/videos/${projets[idProject].video}.mp4" type="video/mp4">
+        </video>
+        `;
+    }
 
+    for(let i = 0; i < gallery.length; i++) {
         let img = `<img src="./assets/images/projects/${gallery[i]}.jpg" alt="photo n° ${i} du projet">`;
         textImg = textImg + img;
-
     }
 
     projetGalerie.innerHTML = `${textImg}`;
