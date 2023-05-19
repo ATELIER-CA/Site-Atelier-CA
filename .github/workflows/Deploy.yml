@@ -1,0 +1,29 @@
+name: Deploy to OVH
+
+on:
+  workflow_dispatch:
+
+env:
+  SERVER_ADDRESS: ${{ secrets.SERVER_ADDRESS }}
+  USERNAME: ${{ secrets.USERNAME }}
+  PASSWORD: ${{ secrets.PASSWORD }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install FTP client
+      run: sudo apt-get install -y lftp
+
+    - name: Deploy code
+      run: |
+        lftp -c "set ssl:verify-certificate no; open ftp://$USERNAME:$PASSWORD@$SERVER_ADDRESS; mirror -R -x .git -x .github -x README.md -x saveScript.sh -x pullScript.sh ./ /www"
