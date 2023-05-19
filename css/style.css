@@ -116,3 +116,25 @@
     margin-bottom: 25px;
     font-size: 1.1em;
 }
+
+#unorderListText {
+    margin: 0;
+    font-family: 'Century Gothic Regular', Helvetica, sans-serif;
+}
+
+#unorderListText li {
+    cursor: initial;
+    list-style: inside;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+#unorderListText li {
+    margin-left: 20px;
+}
+
+#unorderListText li:nth-child(1) {
+    margin-left: 0px;
+}

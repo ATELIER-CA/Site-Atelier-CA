@@ -76,24 +76,3 @@
 .profil div {
     width: 100%;
 }
-
-#unorderListText {
-    margin: 0;
-}
-
-#unorderListText li {
-    cursor: initial;
-    list-style: inside;
-    margin: 0;
-    padding: 0;
-    font-size: 1.1em;
-    font-weight: 400;
-}
-
-#unorderListText li {
-    margin-left: 20px;
-}
-
-#unorderListText li:nth-child(1) {
-    margin-left: 0px;
-}
