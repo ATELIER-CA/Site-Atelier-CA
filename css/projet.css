@@ -26,6 +26,7 @@ div .le-projet .bloc-projet-description .projet-info p span {
 }
 
 div .le-projet .bloc-projet-description .projet-info .desc {
+    font-family: 'Century Gothic Regular', Helvetica, sans-serif;
     width: 100%;
     height: max-content;
     margin-top: 20px;
