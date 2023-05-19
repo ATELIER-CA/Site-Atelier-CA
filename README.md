@@ -1,9 +1,7 @@
 <h1 align="center">COSSET ARCHITECTES ASSOCIES</h1>
 
 <div align="center">
-    <a href="https://atelier-ca.fr/">
-        https://atelier-ca.fr/
-    </a>
+  <a href="https://atelier-ca.fr/">https://atelier-ca.fr/</a>
 </div>
 
 <br>
