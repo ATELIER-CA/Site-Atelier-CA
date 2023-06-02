@@ -9,14 +9,14 @@ if(window.innerWidth > '1024') {
 };
 
 localStorage.removeItem('tablet');
-if(window.innerWidth <= '1024' && window.innerWidth > '768') {
-    localStorage.setItem('tablet', '0');
+if(window.innerWidth <= '1024') {
+    localStorage.setItem('mobile', '0');
 } else {
-    localStorage.setItem('tablet', '1');
+    localStorage.setItem('mobile', '1');
 };
 
 localStorage.removeItem('mobile');
-if(window.innerWidth <= '768') {
+if(window.innerWidth <= '1024') {
     localStorage.setItem('mobile', '0');
 } else {
     localStorage.setItem('mobile', '1');

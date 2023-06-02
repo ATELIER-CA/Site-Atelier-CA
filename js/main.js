@@ -37,89 +37,23 @@ window.addEventListener('resize', () => {
         localStorage.setItem('ordi', '0');
         localStorage.setItem('tablet', '1');
         localStorage.setItem('mobile', '1');
-
         location.reload();
     };
     if(window.innerWidth <= '1024' && window.innerWidth > '768' && JSON.parse(localStorage.getItem('tablet')) === 1) {
         localStorage.setItem('ordi', '1');
-        localStorage.setItem('tablet', '0');
-        localStorage.setItem('mobile', '1');
-
+        localStorage.setItem('tablet', '1');
+        localStorage.setItem('mobile', '0');
         location.reload();
     };
     if(window.innerWidth <= '768' && JSON.parse(localStorage.getItem('mobile')) === 1) {
         localStorage.setItem('ordi', '1');
         localStorage.setItem('tablet', '1');
         localStorage.setItem('mobile', '0');
-
         location.reload();
     };
 })
 
-if(window.innerWidth >= '769') {
-    const cruxBtn = document.createElement('div');
-    cruxBtn.classList.add('crux');
-    cruxBtn.classList.add('none');
-    main.appendChild(cruxBtn)
-
-    btnMenu.addEventListener('click', function() {
-        btnMenu.classList.toggle('active');
-
-        if(btnMenu.classList[1]) {
-            header.style.left = '-84px';
-            header.style.overflowY = 'scroll';
-            svgBarre.style.display = "none";
-            svgCroix.style.display = "flex";
-            MenuText.style.display = "none";
-            FermerText.style.display = "flex";
-        } else {
-            header.style.left = '-168px';
-            header.style.overflowY = 'hidden';
-            svgBarre.style.display = "flex";
-            svgCroix.style.display = "none";
-            MenuText.style.display = "flex";
-            FermerText.style.display = "none";
-        }
-
-        if((Array.from(this.classList)).slice(1)[0]) {
-            cruxBtn.classList.remove('none');
-            cruxBtn.style.opacity = '1';
-        } else {
-            cruxBtn.style.opacity = '0';
-            cruxBtn.classList.add('none');
-        };
-    });
-
-    cruxBtn.addEventListener('click', function() {
-        btnMenu.classList.toggle('active');
-
-        if(btnMenu.classList[1]) {
-            header.style.left = '-84px';
-            header.style.overflowY = 'scroll';
-            svgBarre.style.display = "none";
-            svgCroix.style.display = "flex";
-            MenuText.style.display = "none";
-            FermerText.style.display = "flex";
-        } else {
-            header.style.left = '-168px';
-            header.style.overflowY = 'hidden';
-            svgBarre.style.display = "flex";
-            svgCroix.style.display = "none";
-            MenuText.style.display = "flex";
-            FermerText.style.display = "none";
-        }
-
-        if((Array.from(this.classList)).slice(1)[0]) {
-            cruxBtn.classList.remove('none');
-            cruxBtn.style.opacity = '1';
-        } else {
-            cruxBtn.style.opacity = '0';
-            cruxBtn.classList.add('none');
-        };
-    });
-}
-
-if(window.innerWidth <= '768') {
+if(window.innerWidth <= '1024') {
     btnMenu.addEventListener('click', function() {
         btnMenu.classList.toggle('active');
 
