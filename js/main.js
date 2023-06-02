@@ -4,22 +4,25 @@ if(!localStorage.getItem('btso')) {
 if(!localStorage.getItem('ordi')) {
     if(window.innerWidth > '1024') {
         localStorage.setItem('ordi', '0');
+        localStorage.setItem('tablet', '0');
     } else {
         localStorage.setItem('ordi', '1');
+        localStorage.setItem('tablet', '0');
     };
 };
 if(!localStorage.getItem('tablet')) {
     if(window.innerWidth <= '1024' && window.innerWidth > '768') {
         localStorage.setItem('tablet', '0');
-    } else {
-        localStorage.setItem('tablet', '1');
     };
 };
 if(!localStorage.getItem('mobile')) {
-    if(window.innerWidth <= '768') {
+    if(window.innerWidth <= '1024') {
         localStorage.setItem('mobile', '0');
+        localStorage.setItem('tablet', '0');
     } else {
         localStorage.setItem('mobile', '1');
+        localStorage.setItem('tablet', '0');
+
     };
 };
 
@@ -29,7 +32,6 @@ const svgCroix = document.querySelector('.croix');
 const MenuText = document.querySelector('.textmenu');
 const FermerText = document.querySelector('.textfermer');
 const header = document.querySelector('header');
-const divLogo = document.queryCommandValue('.logo');
 const main = document.querySelector('main');
 
 window.addEventListener('resize', () => {
@@ -39,13 +41,8 @@ window.addEventListener('resize', () => {
         localStorage.setItem('mobile', '1');
         location.reload();
     };
-    if(window.innerWidth <= '1024' && window.innerWidth > '768' && JSON.parse(localStorage.getItem('tablet')) === 1) {
-        localStorage.setItem('ordi', '1');
-        localStorage.setItem('tablet', '1');
-        localStorage.setItem('mobile', '0');
-        location.reload();
-    };
-    if(window.innerWidth <= '768' && JSON.parse(localStorage.getItem('mobile')) === 1) {
+
+    if(window.innerWidth <= '1024' && JSON.parse(localStorage.getItem('mobile')) === 1) {
         localStorage.setItem('ordi', '1');
         localStorage.setItem('tablet', '1');
         localStorage.setItem('mobile', '0');
