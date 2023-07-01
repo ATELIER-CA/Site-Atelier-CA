@@ -60,7 +60,15 @@
     }
 
     footer {
-        padding: 0 20px 0 104px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 40px;
+    }
+
+    #links_footer {
+        display: flex !important;
+        width: 260px;
     }
 
     .agence .employees {
@@ -73,9 +81,9 @@
         padding-top: 70px;
     }
 
-    footer {
+    /* footer {
         padding: 0 20px 30px 20px;
-    }
+    } */
 
     .projet {
         height: 200px;
@@ -294,6 +302,23 @@
 
 }
 
+@media screen and (max-width: 760px) {
+    footer {
+        height: 210px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 69px;
+        font-size: 1.2em;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .profil {
         flex-direction: row;
@@ -317,25 +342,6 @@
         height: 260px;
         min-width: 300px;
         width: 100%;
-    }
-
-    footer {
-        height: 210px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 69px;
-        font-size: 1.2em;
-    }
-
-    .footerLinks {
-        height: 70px;
     }
 }
 /*-SMARTPHONE-->>--TELEPHONE---------------*/

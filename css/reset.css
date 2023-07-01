@@ -156,20 +156,23 @@ li:hover {
 }
 
 #links {
-    padding-left: 25px;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
     height: max-content;
 }
 
 #links a {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 20px;
     width: max-content;
     margin-bottom: 10px;
     font-weight: 400;
+    align-items: center;
 }
 
 #links a:hover {
@@ -177,7 +180,13 @@ li:hover {
 }
 
 #links a svg {
-    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+    margin-right: 4px;
+}
+
+#links a p {
+    padding-bottom: 2px;
 }
 
 #type-projets {
@@ -271,23 +280,35 @@ footer div a {
     border-bottom: 1px solid rgb(255, 255, 255, .4);
 }
 
-.footerLinks {
-    width: 220px;
+#links_footer {
+    width: 320px;
     height: 100%;
     max-height: 70px;
     min-height: 50px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
 }
 
-.footerLinks a {
+#links_footer a {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    height: max-content;
+    justify-content: center;
+    height: 20px;
+    width: max-content;
+    margin-bottom: 10px;
+    font-weight: 400;
+    align-items: center;
+}
+
+#links_footer a svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 4px;
+}
+
+#links_footer a p {
+    padding-bottom: 2px;
 }
 
 /*-ELEMENT-RESPONSIVE--------------------------------------*/
