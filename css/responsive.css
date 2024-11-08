@@ -341,21 +341,24 @@
 }
 
 @media screen and (max-width: 650px) {
+    .agence .employees {
+        gap: 40px;
+    }
+
     .profil {
         flex-direction: row;
         align-items: center;
-        padding: 10px;
         overflow: hidden;
         width: 100%;
         min-width: 312px;
         height: 200px;
-        margin: 0 0 15px 0;
     }
 
     .profil img {
-        height: 180px;
-        width: 180px;
+        height: 200px;
+        width: 200px;
         margin-right: 25px;
+        margin-bottom: 0px;
     }
 }
 /*-SMARTPHONE-->>--TELEPHONE---------------*/
