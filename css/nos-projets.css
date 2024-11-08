@@ -20,48 +20,56 @@
 .bloc-projet {
     position: relative;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    padding-bottom: 35px;
+    margin-bottom: 20px;
+    gap: 44px;
 }
 
 .projet {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    margin: 5px 10px 5px 0px;
-    border-radius: 5px;
     height: 300px;
-    width: 32%;
-    min-width: 450px;
+    width: 100%;
+    max-width: 30%;
+    min-width: 28%;
+
+    a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            height: 250px;
+            border-radius: 5px;
+            margin-bottom: 6px;
+            filter: grayscale(1);
+            transition: all 250ms ease-in-out;
+            object-fit: cover;
+        }
+
+        h3 {
+            display: inline-block;
+            height: 22px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        p {
+            height: 22px;
+        }
+
+        &:hover img {
+            filter: grayscale(0);
+        }
+    }
 }
 
-.projet img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    width: 100%;
-}
-
-.projet a {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(30, 30, 30, .7);
-    color: white;
-    font-weight: 500;
-    font-size: 2.2em;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    opacity: 0;
-    padding: 0 12px;
-}
 
 #tri {
     height: max-content;

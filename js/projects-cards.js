@@ -24,8 +24,15 @@ function showProjectCards() {
         card.classList.add(`${projets[i].type}`);
         card.classList.add("none");
         card.innerHTML = `
-            <img src="./assets/images/projects/${projets[i].image}.jpg" alt="photo d'un projet">
-            <a href="projet.html?${projets[i].id}">${projets[i].title}</a>
+            <a href="projet.html?${projets[i].id}">
+                <img src="./assets/images/projects/${projets[i].image}.jpg" alt="photo du projet ${projets[i].title}">
+                <h3>
+                    ${projets[i].title}
+                </h3>
+                <p>
+                    ${projets[i].lieu}
+                </p>
+            </a>
         `;
 
         blocProject.appendChild(card);

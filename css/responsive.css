@@ -1,22 +1,75 @@
 @media screen and (max-width: 1720px) {
     .projet {
         height: 350px;
-        width: 48%;
-    }
-}
-@media screen and (max-width: 1300px) {
-    .projet {
-        height: 280px;
-        width: 48%;
-        min-width: 280px;
+        width: 100%;
+        max-width: 48%;
+        min-width: 360px;
+
+        a {
+            img {
+                height: 300px;
+                border-radius: 5px;
+                margin-bottom: 6px;
+            }
+
+            h3 {
+                height: 22px;
+            }
+
+            p {
+                height: 22px;
+            }
+        }
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .projet a:hover {
-        opacity: 1;
+@media screen and (max-width: 1440px) {
+    .projet {
+        max-width: 46%;
+        min-width: 350px;
     }
 }
+
+@media screen and (max-width: 1050px) {
+    .projet {
+        height: 284px;
+        min-width: 300px;
+
+        a {
+            img {
+                height: 240px;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    .projet {
+        max-width: 100%;
+        height: 350px;
+
+        a {
+            img {
+                height: 300px;
+                border-radius: 5px;
+                margin-bottom: 6px;
+            }
+
+            h3 {
+                height: 22px;
+            }
+
+            p {
+                height: 22px;
+            }
+        }
+    }
+
+}
+
+
 /*-PETIT-LAPTOP--SMARTPHONE-----------*/
 @media screen and (max-width: 1024px) {
     #projects {
@@ -48,12 +101,6 @@
         display: flex;
     }
 
-    .projet {
-        height: 280px;
-        min-width: 300px;
-        width: 48%;
-    }
-
     #projects button {
         display: none;
         visibility: hidden;
@@ -75,19 +122,9 @@
         min-width: 310px;
     }
 
-
     main {
         padding-left: 0px;
         padding-top: 70px;
-    }
-
-    /* footer {
-        padding: 0 20px 30px 20px;
-    } */
-
-    .projet {
-        height: 200px;
-        min-width: 250px;
     }
 
     .btnMenuText {
@@ -223,17 +260,9 @@
 
     .bloc-projet {
         position: relative;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .projet {
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        margin: 5px;
-        border-radius: 5px;
+        /* display: flex; */
+        /* justify-content: center;
+        flex-wrap: wrap; */
     }
 
     #unorderListText li {
@@ -288,10 +317,6 @@
         width: 95%;
     }
 
-    .projet a {
-        font-size: 1.4em;
-    }
-
     main section h2 {
         font-size: 1.6em;
     }
@@ -336,19 +361,10 @@
         width: 180px;
         margin-right: 25px;
     }
-
-
-    .projet {
-        height: 260px;
-        min-width: 300px;
-        width: 100%;
-    }
 }
 /*-SMARTPHONE-->>--TELEPHONE---------------*/
 @media screen and (max-width: 480px) {
-    .projet {
-        height: 200px;
-        min-width: 300px;
-        width: 100%;
-    }
+
+
+
 }
