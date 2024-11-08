@@ -164,7 +164,7 @@ const projets = [
     budget: "13 250 000 € HT",
     surface: "9 033 m²",
     type: "MEDICO",
-    photos:["ceu201201", "ceu201202", "ceu201203", "ceu201204", "ceu201205", "ceu201206", "ceu201207", "ceu201208", "ceu201209", "ceu201210", "ceu201211", "ceu201212", "ceu201213", "ceu201214", "ceu201215"],
+    photos:["ceu201201", "ceu201202", "ceu201203", "ceu201204", "ceu201205", "ceu201206", "ceu201207", "ceu201208", "ceu201209", "ceu201210", "ceu201211", "ceu201212", "ceu201213", "ceu201214"],
     image: "ceu201200",
     },
     {
@@ -284,7 +284,7 @@ const projets = [
     budget: "8 370 000 € HT",
     surface: "5 638 m²",
     type: "MEDICO",
-    photos:["cem201901", "cem201902", "cem201903", "cem201904", "cem201905", "cem201906", "cem201907", "cem201908", "cem201909", "cem201910", "cem201911", "cem201912", "cem201913", "cem201914", "cem201915", "cem201916", "cem201917", "cem201918", "cem201919", "cem201920", "cem201921"],
+    photos:["cem201901", "cem201902", "cem201903", "cem201904", "cem201905", "cem201906", "cem201907", "cem201908", "cem201909", "cem201910", "cem201911", "cem201912", "cem201913", "cem201914", "cem201915", "cem201916", "cem201917", "cem201918", "cem201919"],
     image: "cem201900",
     },
     {
