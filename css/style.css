@@ -16,7 +16,7 @@
     width: 900%;
     display: flex;
     left: 0;
-    animation: sliderAuto 26s 2s ease-in infinite;
+    animation: sliderAuto 24s 2s ease-in infinite;
 }
 
 .slide {
