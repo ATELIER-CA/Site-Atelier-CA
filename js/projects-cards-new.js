@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Fonction pour charger le fichier JSON
 async function loadProjets() {
     try {
-        const response = await fetch('/js/projets.json');
+        const response = await fetch('./js/projets.json');
         if (!response.ok) throw new Error('Erreur lors du chargement des projets');
         return await response.json();
     } catch (error) {
