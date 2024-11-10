@@ -19,4 +19,4 @@ jobs:
         run: sudo apt-get install -y lftp
       - name: Deploy code
         run: |
-          lftp -c "set ssl:verify-certificate no; open ftp://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@${{ secrets.SERVER_ADDRESS }}; mirror -R -x .git -x .github -x README.md -x saveScript.sh -x pullScript.sh ./ /www"
+          lftp -c "set ssl:verify-certificate no; open ftp://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@${{ secrets.SERVER_ADDRESS }}; mirror -R -x .git -x .github -x README.md -x saveScript.sh -x pullScript.sh -x tools ./ /www"
