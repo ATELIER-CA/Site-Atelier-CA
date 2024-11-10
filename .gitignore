@@ -12,3 +12,5 @@ src/upload/sounds/*.mp3
 src/upload/music
 Dockerfile
 tools/
+assets/images-test/*
+js/projets-copy.json
