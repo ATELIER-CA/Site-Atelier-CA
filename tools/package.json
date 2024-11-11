@@ -1,0 +1,26 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "author": "Fabio RAMOS LOPES",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "console-stamp": "^3.1.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "express": "^4.21.1",
+    "express-handlebars": "^8.0.1",
+    "handlebars": "^4.7.8",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.2",
+    "split": "^1.0.1"
+  }
+}

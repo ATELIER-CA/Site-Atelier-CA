@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/depot.css">
+
+<div id="depot">
+    <ul id="actions">
+        <li class="btn btn-info" data-btn-synchro="">
+            <i class="fas fa-sync-alt"></i>
+            <p>
+                Synchroniser
+            </p>
+        </li>
+    </ul>
+
+    <h2>
+        La page dépôt sert à déposer et charger de nouvelles images puis une fois les images charger il suffit de Synchroniser
+    </h2>
+
+    <div drag-and-drop-zone="" class="file-container">
+        <label for="dropzone-file">
+            <div>
+                <svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                </svg>
+                <b>Importer vos images</b>
+                <p class="first">
+                    <span>Click to upload</span> or drag and drop
+                </p>
+                <p class="second">JPG (exemple2024100.jpg)</p>
+            </div>
+            <input input-dropzone="" multiple="" id="dropzone-file" type="file" accept="image/jpg" hidden="" />
+        </label>
+    </div>
+</div>
+
+<script type="module" src="/js/depot.mjs"></script>

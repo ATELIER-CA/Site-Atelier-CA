@@ -1,0 +1,68 @@
+#depot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+
+    h2 {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: 100%;
+        font-size: 18px;
+		font-weight: 600;
+    }
+}
+
+
+.file-container label {
+	background-color: rgba(20, 11, 110, 0.2);
+	border: 1px dashed #140B6E;
+	color: #140B6E;
+}
+
+.file-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+    min-width: 200px;
+    min-height: 150px;
+}
+
+.file-container label {
+	cursor: pointer;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.file-container label div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1.25em;
+	padding-bottom: 1.5em;
+	height: 600px;
+    height: calc(100vh - 210px);
+}
+
+.file-container label div svg {
+	width: 1.7em;
+	height: 1.7em;
+}
+
+.file-container label div p {
+	font-size: .8em;
+	margin: .15em;
+}
+
+.file-container label div p span {
+	font-weight: 600;
+}

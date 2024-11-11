@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/projets.css">
+
+<div id="main-projets">
+    <ul id="actions">
+        <li class="btn btn-info" data-btn-synchro="">
+            <i class="fas fa-sync-alt"></i>
+            <p>
+                Synchroniser
+            </p>
+        </li>
+        {{!-- <li class="btn btn-success" data-action="">
+            <i class="fas fa-plus"></i>
+            <p>
+                Nouveau projet
+            </p>
+        </li> --}}
+    </ul>
+
+    <div id="filter">
+        <p>
+            Filtre :
+        </p>
+        <button class="active" data-filtre="" data-type="TOUS">
+            Tous les projets
+        </button>
+        {{#each uniqueFiltre}}
+            <button data-filtre="" data-type="{{type}}">
+                {{name}}
+            </button>
+        {{/each}}
+    </div>
+
+    <div id="all-projects">
+        {{#each projets}}
+            <div class="card {{type}}" data-id="{{id}}" data-tag="{{tag}}">
+                <h2>
+                    {{title}}
+                </h2>
+                <p>
+                    {{lieu}}
+                </p>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<script type="module" src="/js/projets.mjs"></script>

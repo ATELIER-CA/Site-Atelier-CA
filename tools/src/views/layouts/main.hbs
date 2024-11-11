@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/atelier-ca-cms.png" type="image/png">
+    {{!-- Fontawesome --}}
+    <link  href="/plugins/fontawesome/fontawesome-all.min.css" rel="stylesheet" />
+    {{!-- Toastify --}}
+    <link href="/plugins/toastify/toastify.css" rel="stylesheet"/>
+    <script src="/plugins/toastify/toastify.js"></script>
+
+    {{!-- CUSTOM --}}
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="/js/nav.mjs"></script>
+    <script defer type="module" src="/js/main.mjs"></script>
+
+    <title>CMS | Atelier-CA</title>
+</head>
+<body>
+    <nav>
+        <div id="bloc-logo">
+            <h1>
+                CMS | Atelier-CA
+            </h1>
+        </div>
+
+        <ul>
+            <li class="active" data-nav="" data-link="projets">
+                <a href="/projets">
+                    <i class="fas fa-folder"></i>
+                    <p>
+                        Projets
+                    </p>
+                </a>
+            </li>
+            <li data-nav="" data-link="new_projet">
+                <a href="/new_projet">
+                    <i class="fas fa-plus-square"></i>
+                    <p>
+                        Nouveau projet
+                    </p>
+                </a>
+            </li>
+            <li data-nav="" data-link="depot">
+                <a href="/depot">
+                    <i class="fas fa-images"></i>
+                    <p>
+                        Déposer des images
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        {{{body}}}
+    </main>
+</body>
+</html>

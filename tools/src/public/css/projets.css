@@ -1,0 +1,78 @@
+#main-projets {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+#filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    min-height: 36px;
+    height: max-content;
+
+    button {
+        cursor: pointer;
+        height: 36px;
+        padding: 0 20px;
+        border-radius: 20px;
+        border: 1px solid #140B6E;
+
+        &:hover {
+            background-color: rgba(20, 11, 110, 0.2);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        &.active {
+            color: white;
+            background-color: #140B6E;
+        }
+    }
+
+}
+
+#all-projects {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    gap: 20px;
+
+    .card {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 14px;
+        border-radius: 6px;
+        background-color: rgb(220, 220, 220);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+            background-color: #140B6E;
+            color: white;
+            /* transform: scale(1.02); */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        &:active {
+            transform: scale(0.99);
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+
+        h2 {
+            font-weight: 600;
+        }
+    }
+}

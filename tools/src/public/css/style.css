@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("root.css");
+@import url("reset.css");
+@import url("layout.css");
+
+#actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    height: 46px;
+    width: 100%;
+}
+
+.btn a,
+.btn form button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 20px;
+    margin: 0px;
+    height: 46px;
+}
+
+.btn form button {
+    font-size: 16px;
+}
+
+.btn:not(:has(a, form)) {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 20px;
+}
+
+.btn {
+    height: 46px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    &:active {
+        transform: scale(.98);
+    }
+}
+
+.btn-success {
+    background-color: rgb(66, 197, 66);
+
+    &:hover {
+        background-color: rgba(66, 197, 66, 0.9);
+    }
+}
+
+.btn-info {
+    background-color: rgb(72, 125, 239);
+
+    &:hover {
+        background-color: rgba(72, 125, 239, 0.9);
+    }
+}
+
+.btn-danger {
+    background-color: rgb(239, 72, 72);
+
+    &:hover {
+        background-color: rgba(239, 72, 72, 0.9);
+    }
+}
+
+.btn-warn {
+    background-color: rgb(239, 203, 72);
+
+    &:hover {
+        background-color: rgba(239, 203, 72, 0.9);
+    }
+}
+
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.col.w50 {
+    width: 50%;
+}
+
+.form-group {
+    position: relative;
+    width: 100%;
+    margin: 0 0 20px 0;
+    min-width: 300px;
+}
+
+.form-group.w75 {
+    width: 75%;
+}
+.form-group.w50 {
+    width: 50%;
+}
+.form-group.w33 {
+    width: 33.33%;
+}
+.form-group.w25 {
+    width: 25%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+label.required::after {
+    content: " *";
+    color: red;
+    font-size: 1.2rem;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007BFF;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.none {
+    display: none !important;
+}
