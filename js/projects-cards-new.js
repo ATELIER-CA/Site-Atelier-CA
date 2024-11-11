@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const blocProject = document.querySelector('.bloc-projet');
-
+    // const blocProject = document.querySelector('.bloc-projet');
     // Charger les données JSON
     const projets = await loadProjets();
 
@@ -17,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadProjets() {
     try {
         const response = await fetch('./js/projets.json');
+        // const response = await fetch('./js/projets-copy.json');
         if (!response.ok) throw new Error('Erreur lors du chargement des projets');
         return await response.json();
     } catch (error) {
