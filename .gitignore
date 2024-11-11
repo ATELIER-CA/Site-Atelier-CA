@@ -11,6 +11,6 @@ src/upload/images/*.jpg
 src/upload/sounds/*.mp3
 src/upload/music
 Dockerfile
-tools/
+tools/node_modules
 assets/images-test/*
 js/projets-copy.json
