@@ -13,7 +13,7 @@ import routes from "./routes/index.js";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
@@ -64,13 +64,25 @@ const hbs = create({
 	helpers: hbs_fn, // handlebars helpers
 });
 
+const staticPath = (localPath) => pathToFileURL(path.join(__dirname, localPath)).pathname;
+
+
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
-app.set("views", [`${__dirname}/views/pages`]);
-app.use("/public", express.static(path.join(__dirname, "public")));
+// app.set("views", [`${__dirname}/views/pages`]);
+app.set("views", [staticPath("views/pages")]);
+
+// app.use("/public", express.static(path.join(__dirname, "public")));
+
 // accèss en static des assets du site
-app.use("/assets", express.static(path.join(__dirname, "../../assets")));
+// app.use("/assets", express.static(path.join(__dirname, "../../assets")));
 
 routes(app);
+
+// Convertit automatiquement le chemin en URL valide
+
+// Utilisation dans express.static
+app.use("/public", express.static(staticPath("public")));
+app.use("/assets", express.static(staticPath("../../assets")));
 
 export default app;
