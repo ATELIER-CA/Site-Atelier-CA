@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // Construire le chemin absolu vers le fichier JSON
-const filePath = path.resolve(__dirname, '../../../js/projets-copy.json');
-const projetImagesPath = path.resolve(__dirname, '../../../assets/images-test/projects');
+const filePath = path.resolve(__dirname, '../../../js/projets.json');
+const projetImagesPath = path.resolve(__dirname, '../../../assets/images/projects');
 
 
 export const synchro = async(req, res) => {

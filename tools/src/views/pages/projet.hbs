@@ -66,7 +66,7 @@
         <div class="row">
             <div class="form-group w50">
                 <label for="desc">Description</label>
-                <textarea id="desc" name="desc" value="{{desc}}" placeholder="Description..."></textarea>
+                <textarea id="desc" name="desc" placeholder="Description...">{{desc}}</textarea>
             </div>
 
             <div class="col w50">
@@ -88,12 +88,12 @@
         <div id="images-list">
             {{#if photos}}
                 {{#if image}}
-                    <img class="main" data-img-projet="" src="/assets/images-test/projects/{{image}}.jpg" alt="Images du projet {{images}}">
+                    <img class="main" data-img-projet="" src="/assets/images/projects/{{image}}.jpg" alt="Images du projet {{images}}">
                     <div id="separator-img"></div>
                 {{/if}}
 
                 {{#each photos}}
-                    <img data-img-projet="" src="/assets/images-test/projects/{{.}}.jpg" alt="Images du projet {{.}}">
+                    <img data-img-projet="" src="/assets/images/projects/{{.}}.jpg" alt="Images du projet {{.}}">
                 {{/each}}
             {{else}}
                 <div drag-and-drop-zone="" class="file-container">

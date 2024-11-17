@@ -5,7 +5,12 @@
   "main": "server.js",
   "scripts": {
     "dev": "node --watch server.js",
-    "start": "node server.js"
+    "start": "node start_project.cjs"
+  },
+  "pkg": {
+    "assets": [
+      "start_tools.sh"
+    ]
   },
   "author": "Fabio RAMOS LOPES",
   "license": "ISC",

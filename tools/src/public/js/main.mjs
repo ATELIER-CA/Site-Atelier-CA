@@ -36,11 +36,11 @@ document.querySelector("[data-btn-synchro]")?.addEventListener("click", async() 
 const inputFile = document.querySelector("[input-dropzone]");
 const fileContainer = document.querySelector("[drag-and-drop-zone]");
 
-fileContainer.addEventListener("dragover", (e) => {
+fileContainer?.addEventListener("dragover", (e) => {
 	e.preventDefault();
 });
 
-fileContainer.addEventListener("drop", async(e) => {
+fileContainer?.addEventListener("drop", async(e) => {
 	e.preventDefault();
     const files = e.dataTransfer.files;
     const formData = new FormData();
@@ -83,7 +83,7 @@ fileContainer.addEventListener("drop", async(e) => {
     }
 });
 
-inputFile.addEventListener("change", async(e) => {
+inputFile?.addEventListener("change", async(e) => {
 	const files = e.target.files || e.dataTransfer.files;
     const formData = new FormData();
     for (let i = 0; i < files.length; i++) {

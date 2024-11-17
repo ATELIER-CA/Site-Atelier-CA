@@ -62,9 +62,7 @@
             "mep200501",
             "mep200502",
             "mep200503",
-            "mep200504",
-            "mep200505",
-            "mep200506"
+            "mep200504"
         ],
         "image": "mep200500",
         "tag": "mep2005"
@@ -174,8 +172,7 @@
             "reet200907",
             "reet200908",
             "reet200909",
-            "reet200910",
-            "reet200911"
+            "reet200910"
         ],
         "image": "reet200900",
         "tag": "reet2009"
@@ -197,10 +194,7 @@
             "eea201005",
             "eea201006",
             "eea201007",
-            "eea201008",
-            "eea201009",
-            "eea201010",
-            "eea201011"
+            "eea201008"
         ],
         "image": "eea201000",
         "tag": "eea2010"
@@ -239,8 +233,7 @@
             "reche201103",
             "reche201104",
             "reche201105",
-            "reche201106",
-            "reche201107"
+            "reche201106"
         ],
         "image": "reche201100",
         "tag": "reche2011"
@@ -373,8 +366,7 @@
             "26lci201605",
             "26lci201606",
             "26lci201607",
-            "26lci201608",
-            "26lci201609"
+            "26lci201608"
         ],
         "image": "26lci201600",
         "tag": "26lci2016"
@@ -463,12 +455,7 @@
             "mibe201905",
             "mibe201906",
             "mibe201907",
-            "mibe201908",
-            "mibe201908",
-            "mibe201909",
-            "mibe201910",
-            "mibe201911",
-            "mibe201912"
+            "mibe201908"
         ],
         "image": "mibe201900",
         "tag": "mibe2019"
@@ -522,7 +509,6 @@
             "cem201913",
             "cem201914",
             "cem201915",
-            "cem201916",
             "cem201917",
             "cem201918",
             "cem201919"
@@ -542,10 +528,10 @@
         "photos": [
             "ln202104",
             "ln202105",
-            "ln202109",
             "ln202106",
             "ln202107",
             "ln202108",
+            "ln202109",
             "ln202110",
             "ln202111",
             "ln202112",
@@ -564,21 +550,18 @@
         "surface": "900 m²",
         "type": "INDUSTRIEL",
         "photos": [
-            "cdce202108",
-            "cdce202110",
-            "cdce202109",
-            "cdce202111",
-            "cdce202112",
             "cdce202101",
             "cdce202102",
             "cdce202103",
             "cdce202104",
             "cdce202105",
             "cdce202106",
-            "cdce202107"
+            "cdce202107",
+            "cdce202108"
         ],
         "image": "cdce202100",
-        "tag": "cdce2021"
+        "tag": "cdce2021",
+        "desc": "coucou"
     },
     {
         "id": 27,
@@ -588,7 +571,7 @@
         "moa": "Commune de Chanteix",
         "budget": "1 080 000 € TTC",
         "surface": "600 m²",
-        "desc": "Le projet de requalification de « La Boîte en Zinc » à Chanteix vise à redéfinir l'image de la commune. La démolition de la maison voisine, appelée « Maison Poumier », permettra de libérer de l'espace et de donner plus de visibilité à cet équipement public, renforçant ainsi sa présence dans le bourg. Le projet comprend un nouveau parvis ainsi qu’un espace vert, en prolongement des espaces intérieurs.<br>Le projet s'inspire du patrimoine local en utilisant des matériaux recyclés issus de la démolition, tels que les pierres et les ardoises, pour créer un « socle » harmonieux avec l'environnement. L'extension s'intègre dans le tissu bâti existant et se compose d’un nouveau volume en zinc relié à la salle polyvalente par un volume intermédiaire de dimensions réduites. L'objectif est de maintenir une architecture à l'échelle du bourg de Chanteix.<br> L’aménagement du parvis, partiellement abrité, offrira des espaces d’ombres, et mettra en valeur les éléments du patrimoine local tels que les murets et le puits existant, qui servira de totem signal pour annoncer les événements de la commune.<br>L'agrandissement de la salle polyvalente permettra d'améliorer considérablement ce lieu de rassemblement et de renforcer le lien social dans le territoire local. La séparation fonctionnelle des espaces permettra une meilleure fonctionnalité et utilisation de l'équipement, offrant une plus grande diversité d’usages. Le projet prend en compte les principes du développement durable par l’utilisation du bois dans son enveloppe ainsi que dans l’aménagement des locaux intérieurs. L'aspect esthétique et moderne du bâtiment contribuera à améliorer l'image de cet équipement et de la commune dans son ensemble, renforçant ainsi son attractivité.",
+        "desc": " Le projet de requalification de « La Boîte en Zinc » à Chanteix vise à redéfinir l'image de la commune. La démolition de la maison voisine, appelée « Maison Poumier », permettra de libérer de l'espace et de donner plus de visibilité à cet équipement public, renforçant ainsi sa présence dans le bourg. Le projet comprend un nouveau parvis ainsi qu’un espace vert, en prolongement des espaces intérieurs.<br>Le projet s'inspire du patrimoine local en utilisant des matériaux recyclés issus de la démolition, tels que les pierres et les ardoises, pour créer un « socle » harmonieux avec l'environnement. L'extension s'intègre dans le tissu bâti existant et se compose d’un nouveau volume en zinc relié à la salle polyvalente par un volume intermédiaire de dimensions réduites. L'objectif est de maintenir une architecture à l'échelle du bourg de Chanteix.<br> \nL’aménagement du parvis, partiellement abrité, offrira des espaces d’ombres, et mettra en valeur les éléments du patrimoine local tels que les murets et le puits existant, qui servira de totem signal pour annoncer les événements de la commune.<br>L'agrandissement de la salle polyvalente permettra d'améliorer considérablement ce lieu de rassemblement et de renforcer le lien social dans le territoire local. La séparation fonctionnelle des espaces permettra une meilleure fonctionnalité et utilisation de l'équipement, offrant une plus grande diversité d’usages. Le projet prend en compte les principes du développement durable par l’utilisation du bois dans son enveloppe ainsi que dans l’aménagement des locaux intérieurs. L'aspect esthétique et moderne du bâtiment contribuera à améliorer l'image de cet équipement et de la commune dans son ensemble, renforçant ainsi son attractivité.\n                ",
         "type": "EQUIPEMENTS",
         "photos": [
             "bez202301",
@@ -602,5 +585,33 @@
         ],
         "image": "bez202300",
         "tag": "bez2023"
+    },
+    {
+        "id": 28,
+        "title": "sdezgez",
+        "type": "LOGEMENTS",
+        "lieu": "dgsedb",
+        "calendar": "",
+        "moa": "",
+        "desc": "",
+        "budget": "",
+        "surface": "",
+        "tag": "",
+        "image": "",
+        "photos": []
+    },
+    {
+        "id": 29,
+        "title": "sdvsdv",
+        "type": "",
+        "lieu": "qdvdvs",
+        "calendar": "",
+        "moa": "",
+        "desc": "",
+        "budget": "",
+        "surface": "",
+        "tag": "",
+        "image": "",
+        "photos": []
     }
 ]
