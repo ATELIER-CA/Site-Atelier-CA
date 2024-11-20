@@ -60,8 +60,8 @@ import hbs_fn from "./helpers/hbs_fn.js";
 
 const hbs = create({
 	defaultLayout: "main", // layout or false
-	layoutsDir: path.join(__dirname, "views", "layouts"), // Chemin des layouts
-	partialsDir: path.join(__dirname, "views", "partials"),
+	layoutsDir: decodeURIComponent(path.join(__dirname, "views", "layouts")), // Chemin des layouts
+	partialsDir: decodeURIComponent(path.join(__dirname, "views", "partials")),
 	extname: ".hbs",
 	helpers: hbs_fn, // handlebars helpers
 });
