@@ -585,33 +585,5 @@
         ],
         "image": "bez202300",
         "tag": "bez2023"
-    },
-    {
-        "id": 28,
-        "title": "sdezgez",
-        "type": "LOGEMENTS",
-        "lieu": "dgsedb",
-        "calendar": "",
-        "moa": "",
-        "desc": "",
-        "budget": "",
-        "surface": "",
-        "tag": "",
-        "image": "",
-        "photos": []
-    },
-    {
-        "id": 29,
-        "title": "sdvsdv",
-        "type": "",
-        "lieu": "qdvdvs",
-        "calendar": "",
-        "moa": "",
-        "desc": "",
-        "budget": "",
-        "surface": "",
-        "tag": "",
-        "image": "",
-        "photos": []
     }
 ]
