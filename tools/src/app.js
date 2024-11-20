@@ -18,6 +18,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 
+const staticPath = (localPath) => pathToFileURL(path.join(__dirname, localPath)).pathname;
+
 // Console write
 const morgan_config = {
 	skip: (req) => {
@@ -58,14 +60,11 @@ import hbs_fn from "./helpers/hbs_fn.js";
 
 const hbs = create({
 	defaultLayout: "main", // layout or false
-	layoutsDir: `${__dirname}/views/layouts`, // layout folder name
-	partialsDir: `${__dirname}/views/partials`, // partials folder name
+	layoutsDir: path.join(__dirname, "views", "layouts"), // Chemin des layouts
+	partialsDir: path.join(__dirname, "views", "partials"),
 	extname: ".hbs",
 	helpers: hbs_fn, // handlebars helpers
 });
-
-const staticPath = (localPath) => pathToFileURL(path.join(__dirname, localPath)).pathname;
-
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
