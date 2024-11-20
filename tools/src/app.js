@@ -66,10 +66,13 @@ const hbs = create({
 	helpers: hbs_fn, // handlebars helpers
 });
 
+file://${path.join(__dirname, "views", "pages")}
+
+
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 // app.set("views", [`${__dirname}/views/pages`]);
-app.set("views", [staticPath("views/pages")]);
+app.set("views", `file://${path.join(__dirname, "views", "pages")}`);
 
 // app.use("/public", express.static(path.join(__dirname, "public")));
 
