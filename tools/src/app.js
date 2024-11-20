@@ -18,7 +18,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 
-const staticPath = (localPath) => pathToFileURL(path.join(__dirname, localPath)).pathname;
+const staticPath = (localPath) => path.join(__dirname, localPath);
 
 // Console write
 const morgan_config = {
