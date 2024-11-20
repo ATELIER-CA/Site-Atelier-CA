@@ -60,19 +60,19 @@ import hbs_fn from "./helpers/hbs_fn.js";
 
 const hbs = create({
 	defaultLayout: "main", // layout or false
-	layoutsDir: decodeURIComponent(path.resolve(__dirname, "views", "layouts")), // Chemin des layouts
-	partialsDir: decodeURIComponent(path.resolve(__dirname, "views", "partials")),
+	layoutsDir: path.join(__dirname, "views", "layouts"), // Chemin des layouts
+	partialsDir: path.join(__dirname, "views", "partials"),
 	extname: ".hbs",
 	helpers: hbs_fn, // handlebars helpers
 });
 
-file://${path.join(__dirname, "views", "pages")}
+
 
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
-// app.set("views", [`${__dirname}/views/pages`]);
-app.set("views", `file://${path.join(__dirname, "views", "pages")}`);
+app.set("views", [`${__dirname}/views/pages`]);
+
 
 // app.use("/public", express.static(path.join(__dirname, "public")));
 

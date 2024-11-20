@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // Construire le chemin absolu vers le fichier JSON
-const filePath = path.resolve(__dirname, '../../../js/projets.json');
+const filePath = path.join(__dirname, '../../../js/projets.json');
 
 const mapsType = {
     MEDICO: "Medico-Social",
