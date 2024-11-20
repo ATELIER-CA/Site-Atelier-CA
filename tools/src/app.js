@@ -20,7 +20,6 @@ const app = express();
 
 const staticPath = (localPath) => path.join(__dirname, localPath);
 
-// Console write
 const morgan_config = {
 	skip: (req) => {
 		if (
@@ -66,24 +65,12 @@ const hbs = create({
 	helpers: hbs_fn, // handlebars helpers
 });
 
-
-
-
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", [`${__dirname}/views/pages`]);
 
-
-// app.use("/public", express.static(path.join(__dirname, "public")));
-
-// accèss en static des assets du site
-// app.use("/assets", express.static(path.join(__dirname, "../../assets")));
-
 routes(app);
 
-// Convertit automatiquement le chemin en URL valide
-
-// Utilisation dans express.static
 app.use("/public", express.static(staticPath("public")));
 app.use("/assets", express.static(staticPath("../../assets")));
 

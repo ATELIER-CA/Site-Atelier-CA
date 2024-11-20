@@ -3,13 +3,12 @@ import { existsSync } from "node:fs";
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Obtenir le chemin absolu du fichier actuel
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Construire le chemin absolu vers le fichier JSON
 const filePath = path.join(__dirname, '../../../js/projets.json');
 const projetImagesPath = path.join(__dirname, '../../../assets/images/projects');
+
 
 export const synchro = async (req, res) => {
     try {
