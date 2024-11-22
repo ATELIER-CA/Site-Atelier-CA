@@ -158,8 +158,8 @@ export const add_projet = async (req, res) => {
 export const save_on_github = async (req, res) => {
     try {
         let action = 'SAVE with CMS';
-        // const { deploy } = req.query;
 
+        // const { deploy } = req.query;
         // if(deploy) {
         //     action = 'PUBLISH with CMS - [deploy]';
         // }
@@ -175,13 +175,9 @@ export const save_on_github = async (req, res) => {
                 console.error(`Script stderr: ${stderr}`);
                 return res.status(500).json({ error: stderr });
             }
-
-            console.log(`Script output: ${stdout}`);
+            console.log(`saveScript : ${stdout}`);
             res.status(200).json({ output: stdout });
         });
-        // res.status(200).json({
-        //     message: "OK"
-        // });
     } catch (err) {
         console.error(err);
         res.status(500).json({});

@@ -54,13 +54,20 @@ const saveGithubBtn = document.querySelector("[data-save-gh]");
 
 saveGithubBtn?.addEventListener("click", async() => {
     try {
-        console.log('click');
-
         const call = await fetch("/save");
         const resp = await call.json();
 
-        console.log(resp);
-
+        Toastify({
+			text: "Sauvegarde sur github réussi !",
+			className: "success",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
     } catch (err) {
         console.error(err);
         Toastify({
