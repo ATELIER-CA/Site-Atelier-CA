@@ -285,13 +285,14 @@
         width: 100%;
         min-width: 310px;
         height: max-content;
+        margin-bottom: 40px;
     }
 
     .info section {
         margin: 25px 0;
     }
 
-    iframe {
+    #contactPlan {
         width: 100%;
     }
 
@@ -324,6 +325,17 @@
 }
 
 @media screen and (max-width: 760px) {
+    #plan_agence {
+        height: 550px;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            min-width: 320px;
+        }
+    }
+
+
     footer {
         height: 210px;
         display: flex;
@@ -359,6 +371,10 @@
         width: 200px;
         margin-right: 25px;
         margin-bottom: 0px;
+    }
+
+    .info {
+        flex-direction: column;
     }
 }
 /*-SMARTPHONE-->>--TELEPHONE---------------*/

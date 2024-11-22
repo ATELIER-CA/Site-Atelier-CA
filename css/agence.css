@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 50px;
+    gap: 70px;
     flex-wrap: wrap;
     flex-shrink: 1;
     margin-bottom: 40px;
@@ -79,4 +79,19 @@
 #dessin {
     width: 100%;
     margin-bottom: 40px;
+}
+
+#plan_agence {
+    height: 550px;
+    min-height: max-content;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    img {
+        width: 45%;
+        min-width: 320px;
+    }
 }

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PROJECT_PATH="$(cd "$(dirname "$0")" && pwd)"
-
 # Obtenir le chemin du dossier contenant le script
 PROJECT_PATH="$(cd "$(dirname "$0")" && pwd)"
 
@@ -20,8 +18,8 @@ elif [[ "$OS" == "Darwin" ]]; then
     sleep 2
     open "http://localhost:2419"
 elif [[ "$OS" == *"_NT"* ]]; then
-    # Pour Windows (cmd.exe ou PowerShell)
-    start cmd.exe /K "cd /d $PROJECT_PATH && node server.js"
+    # Pour Windows (PowerShell)
+    powershell.exe -NoExit -Command "cd '$PROJECT_PATH'; node server.js"
     sleep 2
     start "http://localhost:2419"
 else
