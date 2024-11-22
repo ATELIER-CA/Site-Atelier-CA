@@ -165,7 +165,6 @@ export const save_on_github = async (req, res) => {
         // }
 
         const scriptPath = path.join(__dirname, '../../../saveScript.sh');
-        // const scriptDir = path.dirname(scriptPath);
 
         exec(`sh ${scriptPath} "${action}"`, (error, stdout, stderr) => {
             if (error) {
