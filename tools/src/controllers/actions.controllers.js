@@ -9,33 +9,16 @@ const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, '../../../js/projets.json');
 const projetImagesPath = path.join(__dirname, '../../../assets/images/projects');
 
+import { synchronizeImgProject } from '../helpers/sync.js';
+
 
 export const synchro = async (req, res) => {
     try {
-        const newProjectArray = [];
+        const check = await synchronizeImgProject();
 
-        const call = await readFile(filePath, 'utf-8');
-        const projets = JSON.parse(call);
-        projets.sort((a, b) => a.id - b.id);
-
-        const imageFiles = await readdir(projetImagesPath);
-
-        for (const projet of projets) {
-            const new_projet = {
-                ...projet
-            };
-
-            const filteredFiles = imageFiles.filter(file =>
-                file.startsWith(projet.tag) && !file.endsWith('00.jpg')
-            );
-
-            new_projet.photos = filteredFiles.map(el => el.split('.')[0]);
-            new_projet.image = `${projet.tag}00`;
-            newProjectArray.push(new_projet);
+        if(!check) {
+            throw 'Erreur lors de la synchronisation.';
         }
-
-        await writeFile(filePath, JSON.stringify(newProjectArray, null, 4), 'utf-8');
-        console.log('Fichier mis à jour avec succès');
 
         res.status(200).json({
             message: 'Fichier mis à jour avec succès'
@@ -50,39 +33,11 @@ export const synchro = async (req, res) => {
 
 export const upload = async (req, res) => {
     try {
-        res.status(200).json({
-            message: "OK"
-        });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({});
-    }
-};
+        const check = await synchronizeImgProject();
 
-export const update_projet = async (req, res) => {
-    try {
-        const { id } = req.params;
-
-        const call = await readFile(filePath, 'utf-8');
-        const projets = JSON.parse(call);
-
-        const myProject = projets.find(el => el.id == id);
-        if (!myProject) {
-            throw new Error('Project not found');
+        if(!check) {
+            throw 'Erreur lors de la synchronisation.';
         }
-
-        const projetsWithoutThis = projets.filter(el => el.id != id);
-
-        const newObjProject = {
-            ...myProject,
-            ...req.body
-        };
-
-        projetsWithoutThis.push(newObjProject);
-        projetsWithoutThis.sort((a, b) => a.id - b.id);
-
-        await writeFile(filePath, JSON.stringify(projetsWithoutThis, null, 4), 'utf-8');
-        console.log('Fichier mis à jour avec succès');
 
         res.status(200).json({
             message: "OK"

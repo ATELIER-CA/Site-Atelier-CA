@@ -14,7 +14,6 @@ router.get('/new_projet', dctl.new_projet);
 router.get('/delete_img/:id', actl.delete_img_projet);
 router.post('/upload', upload.array("files"), actl.upload);
 router.put('/synchro', actl.synchro);
-router.post('/update/:id', actl.update_projet);
 router.post('/add_projet', actl.add_projet);
 
 
