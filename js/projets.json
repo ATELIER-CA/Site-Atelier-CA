@@ -581,9 +581,31 @@
             "bez202305",
             "bez202306",
             "bez202307",
-            "bez202308"
+            "bez202308",
+            "bez202309"
         ],
         "image": "bez202300",
         "tag": "bez2023"
+    },
+    {
+        "id": 28,
+        "title": "TRANSFORMATION GRANGE D'UN CHATEAU",
+        "type": "EQUIPEMENTS",
+        "lieu": "Saint-Michel de Bannières",
+        "calendar": "Projet suspendu",
+        "moa": "SAS Château de Blanat",
+        "desc": "",
+        "budget": "NC",
+        "surface": "200 m²",
+        "tag": "gchbla2024",
+        "image": "gchbla202400",
+        "photos": [
+            "gchbla202401",
+            "gchbla202403",
+            "gchbla202404",
+            "gchbla202405",
+            "gchbla202406",
+            "gchbla202407"
+        ]
     }
 ]
