@@ -8,6 +8,8 @@ const __dirname = path.dirname(__filename);
 
 const filePath = path.join(__dirname, '../../../js/projets.json');
 const projetImagesPath = path.join(__dirname, '../../../assets/images/projects');
+const sliderImgPath = path.join(__dirname, '../../../assets/images/slider');
+
 
 import { synchronizeImgProject } from '../helpers/sync.js';
 
@@ -39,6 +41,17 @@ export const upload = async (req, res) => {
             throw 'Erreur lors de la synchronisation.';
         }
 
+        res.status(200).json({
+            message: "OK"
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({});
+    }
+};
+
+export const upload_slider = async (req, res) => {
+    try {
         res.status(200).json({
             message: "OK"
         });
@@ -85,6 +98,24 @@ export const delete_img_projet = async (req, res) => {
         await writeFile(filePath, JSON.stringify(projetsWithoutThis, null, 4), 'utf-8');
 
         res.redirect(`/projet/${id}`);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({});
+    }
+};
+
+export const delete_img_slider = async (req, res) => {
+    try {
+        const sliderImages = await readdir(sliderImgPath);
+
+        for (const img of sliderImages) {
+            const filePath = path.join(sliderImgPath, img);
+            if (existsSync(filePath)) {
+                await unlink(filePath);
+            }
+        }
+
+        res.redirect('/slider');
     } catch (err) {
         console.error(err);
         res.status(500).json({});

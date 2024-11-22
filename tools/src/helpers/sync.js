@@ -1,5 +1,4 @@
-import { unlink, readFile, readdir, writeFile } from "node:fs/promises";
-import { existsSync } from "node:fs";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from 'path';
 import { fileURLToPath } from 'url';
 

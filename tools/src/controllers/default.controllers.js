@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "fs/promises";
+import { readdir, readFile, writeFile } from "fs/promises";
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -6,6 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const filePath = path.join(__dirname, '../../../js/projets.json');
+const sliderImgPath = path.join(__dirname, '../../../assets/images/slider');
+
 
 const mapsType = {
     MEDICO: "Medico-Social",
@@ -92,3 +94,16 @@ export const new_projet = async (req, res) => {
         res.render('404');
     }
 };
+
+export const slider = async(req, res) => {
+    try {
+        const sliderImages = await readdir(sliderImgPath);
+
+        res.render("slider", {
+            sliderImages
+        });
+    } catch (err) {
+        console.error(err);
+        res.render("slider");
+    }
+}

@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/css/slider.css">
+
+<div id="slider">
+    <ul id="actions">
+        <li class="btn btn-danger">
+            <form action="/delete_slider_img" method="get" data-btn-delete-slider-img="">
+                <button type="submit">
+                    <i class="fas fa-trash-alt"></i>
+                    <p>
+                        Supprimer les images du slider
+                    </p>
+                </button>
+            </form>
+        </li>
+    </ul>
+
+    <h2>
+        Images du slider (de slide01.jpg à slide08.jpg)
+    </h2>
+
+    <div id="images-slider-list">
+        {{#if sliderImages}}
+            {{#each sliderImages}}
+                <img data-img-slider="" src="/assets/images/slider/{{.}}" alt="Images du slider {{.}}">
+            {{/each}}
+        {{else}}
+            <div drag-and-drop-slider-zone="" class="file-container">
+                <label for="dropzone-file">
+                    <div>
+                        <svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                        </svg>
+                        <b>Importer vos images du slider</b>
+                        <p class="first">
+                            <span>Click to upload</span> or drag and drop
+                        </p>
+                        <p class="second">JPG (slide01.jpg)</p>
+                    </div>
+                    <input input-slider-dropzone="" multiple="" id="dropzone-file" type="file" accept="image/jpg" hidden="" />
+                </label>
+            </div>
+        {{/if}}
+    </div>
+</div>
+
+<script type="module" src="/js/slider.mjs"></script>
