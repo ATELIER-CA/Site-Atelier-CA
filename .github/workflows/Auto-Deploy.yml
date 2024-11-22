@@ -1,0 +1,25 @@
+name: Auto Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto-deploy:
+    if: "contains(github.event.head_commit.message, '[deploy]')"
+    name: Auto deploy on server
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install FTP client
+        run: sudo apt-get install -y lftp
+      - name: Deploy code
+        run: |
+          lftp -c "set ssl:verify-certificate no; open ftp://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@${{ secrets.SERVER_ADDRESS }}; mirror -R -x .git -x .github -x README.md -x saveScript.sh -x pullScript.sh -x tools ./ /www"
