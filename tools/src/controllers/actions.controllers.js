@@ -157,17 +157,17 @@ export const add_projet = async (req, res) => {
 
 export const save_on_github = async (req, res) => {
     try {
-        let action = '"SAVE with CMS"';
-        const { deploy } = req.query;
+        let action = 'SAVE with CMS';
+        // const { deploy } = req.query;
 
-        if(deploy) {
-            action = '"PUBLISH with CMS - [deploy]"';
-        }
+        // if(deploy) {
+        //     action = 'PUBLISH with CMS - [deploy]';
+        // }
 
         const scriptPath = path.join(__dirname, '../../../saveScript.sh');
-        const scriptDir = path.dirname(scriptPath);
+        // const scriptDir = path.dirname(scriptPath);
 
-        exec(`cd ${scriptDir} && sh ${scriptPath} ${action}`, (error, stdout, stderr) => {
+        exec(`sh ${scriptPath} "${action}"`, (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error executing script: ${error.message}`);
                 return res.status(500).json({ error: error.message });
