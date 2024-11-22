@@ -34,7 +34,7 @@ body {
             }
         }
 
-        ul {
+        ul:not(#btnToSaveAndDeploy) {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -70,24 +70,56 @@ body {
                     }
                 }
 
-                button {
-                    cursor: pointer;
-                    width: 100%;
-                    height: 100%;
-                    padding: 0px;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    gap: 10px;
-                    font-size: 16px;
-
-                    i {
-                        font-size: 22px;
-                    }
-                }
             }
         }
 
+        hr {
+            margin-bottom: 20px;
+            border-color: rgba(29, 30, 33, 0.2);
+        }
+
+        #btnToSaveAndDeploy {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 20px;
+
+            button {
+                cursor: pointer;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                border-radius: 6px;
+                cursor: pointer;
+                padding: 16px 20px;
+                gap: 10px;
+                font-size: 16px;
+                overflow: hidden;
+                background-color: #151C23;
+                color: whitesmoke;
+
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+                &:hover {
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                }
+
+                &:active {
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 3px 6px -1px, rgba(0, 0, 0, 0.3) 0px 2px 5px -2px;
+                    transform: scale(0.99);
+                }
+
+                i {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-weight: 600;
+                }
+            }
+
+        }
 
     }
 
