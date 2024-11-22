@@ -1,4 +1,4 @@
-// DRAG AND DROP FILE ================================================= //
+// DRAG AND DROP FILE ==================================== //
 const inputFile = document.querySelector("[input-dropzone]");
 const fileContainer = document.querySelector("[drag-and-drop-zone]");
 
@@ -48,3 +48,34 @@ inputFile?.addEventListener("change", async(e) => {
 		window.location.reload();
     }
 });
+
+// BOUTON TO SAVE ON GITHUB AND DELOY ==================== //
+const saveGithubBtn = document.querySelector("[data-save-gh]");
+
+saveGithubBtn?.addEventListener("click", async() => {
+    try {
+        console.log('click');
+
+        const call = await fetch("/save");
+        const resp = await call.json();
+
+        console.log(resp);
+
+    } catch (err) {
+        console.error(err);
+        Toastify({
+			text: "Une erreur est survenue lors de la sauvegarde.",
+			className: "error",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
+    }
+})
+
+
+

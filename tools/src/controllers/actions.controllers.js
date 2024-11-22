@@ -1,3 +1,4 @@
+import { exec } from 'node:child_process';
 import { unlink, readFile, readdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from 'path';
@@ -9,7 +10,6 @@ const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, '../../../js/projets.json');
 const projetImagesPath = path.join(__dirname, '../../../assets/images/projects');
 const sliderImgPath = path.join(__dirname, '../../../assets/images/slider');
-
 
 import { synchronizeImgProject } from '../helpers/sync.js';
 
@@ -149,6 +149,40 @@ export const add_projet = async (req, res) => {
             id: new_projet.id,
             message: "OK"
         });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({});
+    }
+};
+
+export const save_on_github = async (req, res) => {
+    try {
+        let action = '"SAVE with CMS"';
+        const { deploy } = req.query;
+
+        if(deploy) {
+            action = '"PUBLISH with CMS - [deploy]"';
+        }
+
+        const scriptPath = path.join(__dirname, '../../../saveScript.sh');
+        const scriptDir = path.dirname(scriptPath);
+
+        exec(`cd ${scriptDir} && sh ${scriptPath} ${action}`, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error executing script: ${error.message}`);
+                return res.status(500).json({ error: error.message });
+            }
+            if (stderr) {
+                console.error(`Script stderr: ${stderr}`);
+                return res.status(500).json({ error: stderr });
+            }
+
+            console.log(`Script output: ${stdout}`);
+            res.status(200).json({ output: stdout });
+        });
+        // res.status(200).json({
+        //     message: "OK"
+        // });
     } catch (err) {
         console.error(err);
         res.status(500).json({});

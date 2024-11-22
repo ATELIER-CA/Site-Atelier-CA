@@ -20,5 +20,7 @@ router.post('/upload_slider', slider_upload.array("files"), actl.upload_slider);
 router.put('/synchro', actl.synchro);
 router.post('/add_projet', actl.add_projet);
 
+router.get('/save', actl.save_on_github);
+
 
 export default router;
