@@ -164,8 +164,6 @@ export const add_projet = async (req, res) => {
         sortedProjects.push(new_projet);
         sortedProjects.sort((a, b) => a.id - b.id);
 
-        console.log(new_projet);
-
         await writeFile(filePath, JSON.stringify(sortedProjects, null, 4), 'utf-8');
         console.log('Nouveau projet créé avec succès');
 

@@ -1,3 +1,37 @@
+// BOUTON SYNCHRO =============================================================== //
+document.querySelector("[data-btn-synchro]")?.addEventListener("click", async() => {
+    try {
+        const call = await fetch("/synchro", {
+            method: "PUT"
+        });
+        Toastify({
+			text: "Synchronisation avec succès.",
+			className: "success",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
+    } catch (err) {
+        console.error(err);
+        Toastify({
+			text: "Une erreur est survenue lors de la synchronisation.",
+			className: "error",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
+    }
+});
+
+
 // DRAG AND DROP FILE ==================================== //
 const inputFile = document.querySelector("[input-dropzone]");
 const fileContainer = document.querySelector("[drag-and-drop-zone]");
@@ -21,10 +55,35 @@ fileContainer?.addEventListener("drop", async(e) => {
         });
         const data = await response.json();
 
-		window.location.reload();
+
+        if(window.location.pathname === "/depot") {
+            Toastify({
+                text: "Images uploadées avec succés !",
+                className: "success",
+                duration: 5000,
+                newWindow: true,
+                close: false,
+                gravity: "bottom",
+                position: "left",
+                stopOnFocus: true,
+                onClick: () => {},
+            }).showToast();
+        } else {
+            window.location.reload();
+        }
     } catch (err) {
         console.error(err);
-		window.location.reload();
+        Toastify({
+			text: "Une erreur est survenue lors de la sauvegarde.",
+			className: "error",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
     }
 });
 
@@ -42,10 +101,34 @@ inputFile?.addEventListener("change", async(e) => {
         });
         const data = await response.json();
 
-		window.location.reload();
+        if(window.location.pathname === "/depot") {
+            Toastify({
+                text: "Images uploadées avec succés !",
+                className: "success",
+                duration: 5000,
+                newWindow: true,
+                close: false,
+                gravity: "bottom",
+                position: "left",
+                stopOnFocus: true,
+                onClick: () => {},
+            }).showToast();
+        } else {
+            window.location.reload();
+        }
     } catch (err) {
         console.error(err);
-		window.location.reload();
+        Toastify({
+			text: "Une erreur est survenue lors de la sauvegarde.",
+			className: "error",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
     }
 });
 
@@ -84,5 +167,7 @@ saveGithubBtn?.addEventListener("click", async() => {
     }
 })
 
-
-
+// BOUTON RETOUR =========================== //
+document.querySelector("[data-come-back]").addEventListener("click", () => {
+    history.back();
+});
