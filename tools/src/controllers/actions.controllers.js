@@ -33,6 +33,30 @@ export const synchro = async (req, res) => {
     }
 };
 
+export const update_projet = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const call = await readFile(filePath, 'utf-8');
+        const projets = JSON.parse(call);
+        const myProject = projets.find(el => el.id == id);
+        const projetsWithoutThis = projets.filter(el => el.id != id);
+        const newObjProject = {
+            ...myProject,
+            ...req.body
+        }
+        projetsWithoutThis.push(newObjProject)
+        projetsWithoutThis.sort((a, b) => a.id - b.id);
+        await writeFile(filePath, JSON.stringify(projetsWithoutThis, null, 4), 'utf-8');
+        console.log('Fichier mis à jour avec succès');
+        res.status(200).json({
+            message: "OK"
+        })
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({});
+    }
+};
+
 export const upload = async (req, res) => {
     try {
         const check = await synchronizeImgProject();

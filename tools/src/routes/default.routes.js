@@ -18,6 +18,7 @@ router.get('/delete_slider_img', actl.delete_img_slider);
 router.post('/upload', upload.array("files"), actl.upload);
 router.post('/upload_slider', slider_upload.array("files"), actl.upload_slider);
 router.put('/synchro', actl.synchro);
+router.post('/update/:id', actl.update_projet);
 router.post('/add_projet', actl.add_projet);
 
 router.get('/save', actl.save_on_github);
