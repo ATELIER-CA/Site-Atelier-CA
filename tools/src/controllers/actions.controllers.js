@@ -197,13 +197,13 @@ export const save_on_github = async (req, res) => {
                 console.error(`Error checking git status: ${error.message}`);
                 return res.status(500).json({ error: error.message });
             }
+
             if (stderr) {
                 console.error(`Git status stderr: ${stderr}`);
                 return res.status(500).json({ error: stderr });
             }
 
             if (stdout.trim() === '') {
-                // Aucune modification détectée
                 return res.status(200).json({ message: 'Nothing to commit, working directory clean' });
             }
 
