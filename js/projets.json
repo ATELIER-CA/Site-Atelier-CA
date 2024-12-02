@@ -608,5 +608,23 @@
             "gchbla202406",
             "gchbla202407"
         ]
+    },
+    {
+        "id": 29,
+        "title": "CONSTRUCTION HALLE DE MALEMORT",
+        "type": "EQUIPEMENTS",
+        "lieu": "Malemort",
+        "calendar": "",
+        "moa": "",
+        "desc": "",
+        "budget": "",
+        "surface": "",
+        "tag": "hdm2024",
+        "image": "hdm202400",
+        "photos": [
+            "hdm202401",
+            "hdm202402",
+            "hdm202403"
+        ]
     }
 ]
