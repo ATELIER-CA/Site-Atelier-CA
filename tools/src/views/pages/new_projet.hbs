@@ -2,6 +2,12 @@
 
 <div id="main_new_projet">
     <ul id="actions">
+        <li class="btn btn-default" data-come-back="">
+            <i class="fas fa-arrow-left"></i>
+            <p>
+                Retour
+            </p>
+        </li>
         <li class="btn btn-success" data-save-new-projet="">
             <i class="fas fa-plus"></i>
             <p>
@@ -20,14 +26,14 @@
         <div class="row">
             <div class="form-group w75">
                 <label for="title" class="required">Titre</label>
-                <input type="text" id="title" name="title" value="" placeholder="Titre...">
+                <input type="text" id="title" name="title" value="" placeholder="Titre..." required="">
             </div>
             <div class="form-group w25">
                 <label for="type" class="required">Type</label>
-                <select id="type" name="type">
+                <select id="type" name="type" required="">
                     <option value="" disabled selected>Choisir un type</option>
                     {{#each typeList}}
-                        <option value="{{.}}">{{.}}</option>
+                        <option value="{{value}}">{{show_value}}</option>
                     {{/each}}
                 </select>
             </div>
@@ -36,7 +42,7 @@
         <div class="row">
             <div class="form-group w33">
                 <label for="lieu" class="required">Lieu</label>
-                <input type="text" id="lieu" name="lieu" value="" placeholder="Lieu...">
+                <input type="text" id="lieu" name="lieu" value="" placeholder="Lieu..." required="">
             </div>
             <div class="form-group w33">
                 <label for="calendar">Calendrier</label>
@@ -65,7 +71,7 @@
                 </div>
                 <div class="form-group">
                     <label for="calendar" class="required">Tag</label>
-                    <input type="text" id="tag" name="tag" value="" placeholder="Tag...">
+                    <input type="text" id="tag" name="tag" value="" placeholder="Tag..." required="">
                 </div>
             </div>
         </div>

@@ -10,13 +10,13 @@ const sliderImgPath = path.join(__dirname, '../../../assets/images/slider');
 
 
 const mapsType = {
-    MEDICO: "Medico-Social",
+    COMMERCE: "Commerce",
     EDUCATION: "Education",
     EQUIPEMENTS: "Equipements Publics",
-    LOGEMENTS: "Logements",
-    MAISON: "Maisons Indiciduelles",
     INDUSTRIEL: "Tertiaire",
-    COMMERCE: "Commerce"
+    LOGEMENTS: "Logements",
+    MAISON: "Maisons Individuelles",
+    MEDICO: "Medico-Social",
 }
 
 export const start = (req, res) => {
@@ -73,7 +73,21 @@ export const projet = async (req, res) => {
             throw new Error('Project not found');
         }
 
-        projet.typeList = Object.keys(mapsType).filter(el => el != projet.type).sort();
+        // projet.typeList = Object.keys(mapsType).filter(el => el != projet.type).sort();
+        projet.type = {
+            value: projet.type,
+            show_value: mapsType[projet.type]
+        }
+
+        const copieMapsType = {...mapsType};
+        delete copieMapsType[projet.type.value];
+
+        projet.typeList = Object.entries(copieMapsType).map(el => {
+            return {
+                value: el[0],
+                show_value: el[1]
+            }
+        });
 
         res.render("projet", projet);
     } catch (err) {
@@ -86,7 +100,12 @@ export const new_projet = async (req, res) => {
     try {
         const data = {};
 
-        data.typeList = Object.keys(mapsType).sort();
+        data.typeList = Object.entries(mapsType).map(el => {
+            return {
+                value: el[0],
+                show_value: el[1]
+            }
+        });
 
         res.render('new_projet', data);
     } catch (err) {

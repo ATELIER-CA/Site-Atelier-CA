@@ -1,6 +1,6 @@
-import { readFile, readdir, writeFile } from "node:fs/promises";
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { readFile, readdir, writeFile, unlink } from "node:fs/promises";
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -34,10 +34,31 @@ export const synchronizeImgProject = async() => {
         }
 
         await writeFile(filePath, JSON.stringify(newProjectArray, null, 4), 'utf-8');
+        await cleanUnreferencedImages(newProjectArray, imageFiles);
 
         return true;
     } catch (err) {
         console.error(err);
         return false;
+    }
+};
+
+const cleanUnreferencedImages = async (projects, imageFiles) => {
+    try {
+        const referencedFiles = new Set();
+
+        for (const projet of projects) {
+            referencedFiles.add(`${projet.image}.jpg`);
+            projet.photos.forEach(photo => referencedFiles.add(`${photo}.jpg`));
+        }
+
+        const filesToDelete = imageFiles.filter(file => !referencedFiles.has(file));
+
+        for (const file of filesToDelete) {
+            const filePathToDelete = path.join(projetImagesPath, file);
+            await unlink(filePathToDelete);
+        }
+    } catch (err) {
+        console.error('Error cleaning images:', err);
     }
 };

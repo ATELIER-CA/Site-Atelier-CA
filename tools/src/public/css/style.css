@@ -46,6 +46,14 @@
     }
 }
 
+.btn-default {
+    background-color: rgb(187, 187, 187);
+
+    &:hover {
+        background-color: rgba(187, 187, 187, 0.9);
+    }
+}
+
 .btn-success {
     background-color: rgb(66, 197, 66);
 
@@ -150,4 +158,9 @@ textarea {
 
 .none {
     display: none !important;
+}
+
+input.failed,
+select.failed {
+    border: 2px solid red;
 }

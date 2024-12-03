@@ -18,7 +18,7 @@
     },
     {
         "id": 2,
-        "title": "MAISON HE",
+        "title": "MAISON HE 2",
         "lieu": "Dampniat (19)",
         "calendar": "Livré en 2001",
         "moa": "Privé",
@@ -30,7 +30,8 @@
             "mihe200102"
         ],
         "image": "mihe200100",
-        "tag": "mihe2001"
+        "tag": "mihe2001",
+        "desc": ""
     },
     {
         "id": 3,
