@@ -592,7 +592,7 @@
         "id": 28,
         "title": "TRANSFORMATION GRANGE D'UN CHATEAU",
         "type": "EQUIPEMENTS",
-        "lieu": "Saint-Michel de Bannières",
+        "lieu": "Saint-Michel de Bannières (46)",
         "calendar": "Projet suspendu",
         "moa": "SAS Château de Blanat",
         "desc": "Depuis plusieurs années, l’agence COSSET ARCHITECTES a le privilège de travailler à la restauration du Château de Blanat, situé dans le Lot (46).<br><br>\nAprès avoir mené à bien les travaux de réhabilitation de l’ancienne demeure attenante, nous avons concentré nos dernières études sur la faisabilité de transformer la grange existante en salle de réception. Face aux marques du temps, il était essentiel d’agir pour préserver ce patrimoine architectural. Les désordres liés à l’enveloppe et à la structure de la grange ont été le point de départ de notre réflexion.<br><br>\nNous avions pour ambition de pérenniser « l’esprit du lieu » (le genius loci) afin de redonner un véritable usage à cette grange. Aujourd’hui, la restauration du château s'inscrit dans une démarche à long terme, basée sur l’observation, l’analyse et la projection. Ces études engagent une réflexion sur l’ensemble du bâti de sorte à concrétiser et harmoniser tout le site.<br><br>\nAujourd’hui, le projet a pris une nouvelle direction et le programme continue d’évoluer. De nouvelles perspectives s’ouvrent, la restauration du Château de Blanat mûrit progressivement et nous en sommes fiers.<br><br>\nProjet non réalisé.",
@@ -625,7 +625,32 @@
         "photos": [
             "hdm202401",
             "hdm202402",
-            "hdm202403"
+            "hdm202403",
+            "hdm202404",
+            "hdm202405",
+            "hdm202406"
+        ]
+    },
+    {
+        "id": 30,
+        "title": "CONSTRUCTION DE 18 LOGEMENTS SOCIAUX",
+        "type": "LOGEMENTS",
+        "lieu": "Couzeix (87)",
+        "calendar": "Etudes en cours",
+        "moa": "Limoges Habitat",
+        "desc": "",
+        "budget": "2 485 000 € HT",
+        "surface": "1 400 m²",
+        "tag": "18lslh2024",
+        "image": "18lslh202400",
+        "photos": [
+            "18lslh202401",
+            "18lslh202402",
+            "18lslh202403",
+            "18lslh202404",
+            "18lslh202405",
+            "18lslh202406",
+            "18lslh202407"
         ]
     }
 ]

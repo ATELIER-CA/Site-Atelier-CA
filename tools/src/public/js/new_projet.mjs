@@ -68,14 +68,14 @@ document.querySelector('[data-save-new-projet]').addEventListener('click', async
             photos: []
         };
 
-        // const call = await fetch("/add_projet", {
-        //     method: "POST",
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newObj)
-        // });
-        // const resp = await call.json();
+        const call = await fetch("/add_projet", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newObj)
+        });
+        const resp = await call.json();
 
         Toastify({
 			text: `Nouveau projet créé avec succès.`,
@@ -89,11 +89,11 @@ document.querySelector('[data-save-new-projet]').addEventListener('click', async
 			onClick: () => {},
 		}).showToast();
 
-        // const element = document.querySelector("[data-new-id]");
-        // if(element) {
-        //     element.setAttribute('data-new-id', resp.id);
-        //     element?.classList.remove("none");
-        // }
+        const element = document.querySelector("[data-new-id]");
+        if(element) {
+            element.setAttribute('data-new-id', resp.id);
+            element?.classList.remove("none");
+        }
     } catch (err) {
         console.error(err);
         Toastify({
