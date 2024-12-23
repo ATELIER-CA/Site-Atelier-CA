@@ -652,5 +652,25 @@
             "18lslh202406",
             "18lslh202407"
         ]
+    },
+    {
+        "id": 31,
+        "title": "CONSTRUCTION DE BUREAUX ET 2 LOGEMENTS",
+        "type": "INDUSTRIEL",
+        "lieu": "Saint-Clément (19)",
+        "calendar": "Concours 2024, classé 2nd",
+        "moa": "Commune de Saint-Clément",
+        "desc": "L’état initial du site offre à la fois des opportunités et des défis pour la conception du nouveau programme. Les bâtiments existants, incluant une maison, une grange et un hangar en bois, sont dans un état de dégradation avancé, notamment en raison de la présence de champignons affectant leur structure en bois. <br><br>\n\nLa déconstruction de ces édifices constitue une opportunité de créer un nouvel ensemble architectural qui répond aux besoins du programme tout en mettant en valeur les qualités du site, comme le cœur de parcelle végétalisé. Nous proposons un projet structuré autour de deux volumes, permettant d’accueillir l’ensemble des fonctions prévues. Cette organisation présente plusieurs avantages, notamment une meilleure intégration au tissu urbain tout en respectant le caractère architectural du bourg de Saint-Clément.<br><br>\n\nCette conception s’inscrit harmonieusement dans le paysage urbain local, assurant une continuité visuelle et une intégration optimale. Elle permet également de proposer des bâtiments aux volumes simples, en cohérence avec les constructions voisines, limités à un rez-de-chaussée avec un étage (R+1).<br><br>\n\nDans une démarche responsable, la réduction de l’impact environnemental des matériaux de construction devient un enjeu essentiel. Les procédés de fabrication des matériaux peuvent en effet générer divers types de pollution, tels que des émissions atmosphériques ou des contaminations des sols et des eaux.<br><br>\n\nPour minimiser ces effets, nous proposons une approche fondée sur l’utilisation de matériaux biosourcés. L’ossature en bois, combinée à des bottes de paille pour l’isolation, offre d’importants avantages écologiques. De plus, les enduits extérieurs réalisés avec un mélange de terre, de paille, de sable et de chaux naturelle s’inscrivent dans une logique de sobriété et de respect environnemental. Ces matériaux, peu transformés et recyclables en fin de vie, contribuent à réduire significativement l’empreinte carbone globale du projet.\n",
+        "budget": "900 000 € HT",
+        "surface": "450 m²",
+        "tag": "idsc24",
+        "image": "idsc2400",
+        "photos": [
+            "idsc2401",
+            "idsc2402",
+            "idsc2403",
+            "idsc2404",
+            "idsc2405"
+        ]
     }
 ]
