@@ -78,7 +78,7 @@ function createGalerie(project) {
         </video>` : '';
 
     project.photos.forEach((photo, index) => {
-        textImg += `<img src="./assets/images/projects/${photo}.jpg" alt="photo n° ${index} du projet">`;
+        textImg += `<img src="./assets/images/projects/${photo}" alt="photo n° ${index} du projet">`;
     });
 
     projetGalerie.innerHTML = textImg;

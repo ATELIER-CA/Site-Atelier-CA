@@ -20,16 +20,19 @@ export const synchronizeImgProject = async() => {
         const imageFiles = await readdir(projetImagesPath);
 
         for (const projet of projets) {
+            const extensions = ['jpg', 'jpeg', 'png', 'gif'];
+            const regex = new RegExp(`^${projet.tag}\\d{2}(?<!00)\\.(${extensions.join('|')})$`, 'i');
+            const regexZero = new RegExp(`^${projet.tag}\\d*00\\.(${extensions.join('|')})$`, 'i');
+
             const new_projet = {
                 ...projet
             };
 
-            const filteredFiles = imageFiles.filter(file =>
-                file.startsWith(projet.tag) && !file.endsWith('00.jpg')
-            );
+            const filteredFiles = imageFiles.filter(file => regex.test(file));
+            const filteredZeroImage = imageFiles.filter(file => regexZero.test(file))[0];
 
-            new_projet.photos = filteredFiles.map(el => el.split('.')[0]);
-            new_projet.image = `${projet.tag}00`;
+            new_projet.photos = filteredFiles;
+            new_projet.image = filteredZeroImage;
             newProjectArray.push(new_projet);
         }
 
@@ -48,8 +51,8 @@ const cleanUnreferencedImages = async (projects, imageFiles) => {
         const referencedFiles = new Set();
 
         for (const projet of projects) {
-            referencedFiles.add(`${projet.image}.jpg`);
-            projet.photos.forEach(photo => referencedFiles.add(`${photo}.jpg`));
+            referencedFiles.add(projet.image);
+            projet.photos.forEach(photo => referencedFiles.add(photo));
         }
 
         const filesToDelete = imageFiles.filter(file => !referencedFiles.has(file));

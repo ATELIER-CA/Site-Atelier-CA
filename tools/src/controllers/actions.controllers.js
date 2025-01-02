@@ -98,12 +98,10 @@ export const delete_img_projet = async (req, res) => {
             throw new Error('Project not found');
         }
 
-        const imgToDel = [];
-
-        imgToDel.push(`${thisProject.image}.jpg`);
-        for (const img of thisProject.photos) {
-            imgToDel.push(`${img}.jpg`);
-        }
+        const imgToDel = [
+            thisProject.image,
+            ...thisProject.photos
+        ];
 
         const projetsWithoutThis = projets.filter(el => el.id != id);
         projetsWithoutThis.push({

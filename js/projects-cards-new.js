@@ -38,7 +38,7 @@ function showProjectCards(projets) {
         card.classList.add('projet', projet.type, 'none');
         card.innerHTML = `
             <a href="projet.html?${projet.id}">
-                <img src="./assets/images/projects/${projet.image}.jpg?v=${v}" alt="photo du projet ${projet.title}">
+                <img src="./assets/images/projects/${projet.image}?v=${v}" alt="photo du projet ${projet.title}">
                 <h3>${projet.title}</h3>
                 <p>${projet.lieu}</p>
             </a>

@@ -84,12 +84,12 @@
         <div id="images-list">
             {{#if photos}}
                 {{#if image}}
-                    <img class="main" data-img-projet="" src="/assets/images/projects/{{image}}.jpg" alt="Images du projet {{images}}">
+                    <img class="main" data-img-projet="" src="/assets/images/projects/{{image}}" alt="Images du projet {{images}}">
                     <div id="separator-img"></div>
                 {{/if}}
 
                 {{#each photos}}
-                    <img data-img-projet="" src="/assets/images/projects/{{.}}.jpg" alt="Images du projet {{.}}">
+                    <img data-img-projet="" src="/assets/images/projects/{{.}}" alt="Images du projet {{.}}">
                 {{/each}}
             {{else}}
                 <div drag-and-drop-zone="" class="file-container">
@@ -102,9 +102,9 @@
                             <p class="first">
                                 <span>Click to upload</span> or drag and drop
                             </p>
-                            <p class="second">JPG ({{tag}}00.jpg)</p>
+                            <p class="second">(.jpg, .jpeg, .png, .gif)</p>
                         </div>
-                        <input input-dropzone="" multiple="" id="dropzone-file" type="file" accept="image/jpg" hidden="" />
+                        <input input-dropzone="" multiple="" id="dropzone-file" type="file" accept=".jpg, .jpeg, .png, .gif" hidden="" />
                     </label>
                 </div>
             {{/if}}
