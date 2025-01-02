@@ -301,13 +301,11 @@
 
 @media screen and (max-width: 760px) {
     #plan_agence {
-        height: 550px;
         flex-direction: column;
     }
 
     #plan_agence img {
         width: 100%;
-        min-width: 320px;
     }
 
     .bloc-projet {
@@ -375,11 +373,6 @@
         height: max-content;
         width: 100%;
         flex-direction: column;
-    }
-
-    #plan_agence img {
-        width: 100%;
-        min-width: 320px;
     }
 
     .agence .employees {

@@ -82,7 +82,8 @@
 }
 
 #plan_agence {
-    height: 550px;
+    max-height: 550px;
+    height: auto;
     min-height: max-content;
     margin-bottom: 50px;
     display: flex;
@@ -92,6 +93,6 @@
     overflow: hidden;
     img {
         width: 45%;
-        min-width: 320px;
+        min-width: 250px;
     }
 }
