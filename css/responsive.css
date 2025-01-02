@@ -256,9 +256,6 @@
 
     .bloc-projet {
         position: relative;
-        /* display: flex; */
-        /* justify-content: center;
-        flex-wrap: wrap; */
     }
 
     #unorderListText li {
@@ -325,6 +322,11 @@
 }
 
 @media screen and (max-width: 760px) {
+    .slide {
+        height: calc(100svh - 70px);
+    }
+
+
     #plan_agence {
         height: 550px;
         flex-direction: column;
@@ -335,6 +337,26 @@
         }
     }
 
+    .bloc-projet {
+        gap: 10px;
+    }
+
+    .projet {
+        height: 280px;
+
+        a {
+            img {
+                height: 220px;
+                border-radius: 5px;
+                margin-bottom: 6px;
+                filter: grayscale(0);
+            }
+
+            &:hover img {
+                filter: none !important;
+            }
+        }
+    }
 
     footer {
         height: 210px;
@@ -362,7 +384,7 @@
         align-items: center;
         overflow: hidden;
         width: 100%;
-        min-width: 312px;
+        min-width: 300px;
         height: 200px;
     }
 
@@ -379,7 +401,29 @@
 }
 /*-SMARTPHONE-->>--TELEPHONE---------------*/
 @media screen and (max-width: 480px) {
+    #plan_agence {
+        height: max-content;
+        width: 100%;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            min-width: 320px;
+        }
+    }
 
 
 
+    .agence .employees {
+        gap: 10px;
+    }
+
+    .profil {
+        height: max-content;
+    }
+
+    .profil img {
+        height: 120px;
+        width: 120px;
+    }
 }
