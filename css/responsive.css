@@ -369,12 +369,6 @@
 }
 /*-SMARTPHONE-->>--TELEPHONE---------------*/
 @media screen and (max-width: 480px) {
-    #plan_agence {
-        height: max-content;
-        width: 100%;
-        flex-direction: column;
-    }
-
     .agence .employees {
         gap: 10px;
     }
