@@ -1,29 +1,8 @@
 @media screen and (max-width: 1720px) {
-    .projet {
-        height: 350px;
-        width: 100%;
-        max-width: 48%;
-        min-width: 360px;
 
-        a {
-            img {
-                height: 300px;
-                border-radius: 5px;
-                margin-bottom: 6px;
-            }
-
-            h3 {
-                height: 22px;
-            }
-
-            p {
-                height: 22px;
-            }
-        }
-    }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1515px) {
     .projet {
         max-width: 46%;
         min-width: 350px;
@@ -318,23 +297,17 @@
     .description section h1 {
         font-size: 2.6em;
     }
-
 }
 
 @media screen and (max-width: 760px) {
-    .slide {
-        height: calc(100svh - 70px);
-    }
-
-
     #plan_agence {
         height: 550px;
         flex-direction: column;
+    }
 
-        img {
-            width: 100%;
-            min-width: 320px;
-        }
+    #plan_agence img {
+        width: 100%;
+        min-width: 320px;
     }
 
     .bloc-projet {
@@ -343,19 +316,16 @@
 
     .projet {
         height: 280px;
+    }
 
-        a {
-            img {
-                height: 220px;
-                border-radius: 5px;
-                margin-bottom: 6px;
-                filter: grayscale(0);
-            }
+    .projet a img {
+        height: 220px;
+        filter: grayscale(0);
+    }
 
-            &:hover img {
-                filter: none !important;
-            }
-        }
+    .projet a:hover img {
+        filter: none !important;
+
     }
 
     footer {
@@ -405,14 +375,12 @@
         height: max-content;
         width: 100%;
         flex-direction: column;
-
-        img {
-            width: 100%;
-            min-width: 320px;
-        }
     }
 
-
+    #plan_agence img {
+        width: 100%;
+        min-width: 320px;
+    }
 
     .agence .employees {
         gap: 10px;
