@@ -1,3 +1,8 @@
+document.querySelector("#mainLogoNav").addEventListener("click", () => {
+    window.location.href = "./index.html";
+})
+
+
 if(!localStorage.getItem('btso')) {
     localStorage.setItem('btso', 'so1');
 };

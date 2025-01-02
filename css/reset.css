@@ -141,6 +141,10 @@ header .reseaux {
     width: 200px;
 }
 
+#mainLogoNav {
+    cursor: pointer;
+}
+
 nav {
     cursor: pointer;
     margin-top: 140px;
