@@ -143,6 +143,6 @@ body {
 }
 
 /* Appliquer l'animation à la classe .fa-sync-alt */
-.fa-sync-alt {
+.fa-sync {
     animation: spin 2s linear infinite;
 }

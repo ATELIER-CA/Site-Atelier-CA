@@ -134,22 +134,26 @@ inputFile?.addEventListener("change", async(e) => {
 
 // BOUTON TO SAVE ON GITHUB AND DELOY ==================== //
 const saveGithubBtn = document.querySelector("[data-save-gh]");
+const publishGithubBtn = document.querySelector("[data-publish-gh]");
+
+const githubIcon = saveGithubBtn.querySelector(".fa-github");
+const githubIconAlt = saveGithubBtn.querySelector(".fa-github-alt");
+const syncIcon = saveGithubBtn.querySelectorAll(".fa-sync");
 
 saveGithubBtn?.addEventListener("click", async function() {
-    const githubIcon = saveGithubBtn.querySelector(".fa-github");
-    const syncIcon = saveGithubBtn.querySelector(".fa-sync-alt");
-
     try {
-        githubIcon.classList.add('none');
-        syncIcon.classList.remove('none');
         this.classList.add('disabled');
+        publishGithubBtn.classList.add('disabled');
+        githubIcon.classList.add('none');
+        syncIcon.forEach(el => el.classList.remove('none'));
 
         const call = await fetch("/save");
         const resp = await call.json();
 
         this.classList.remove('disabled');
+        publishGithubBtn.classList.remove('disabled');
         githubIcon.classList.remove('none');
-        syncIcon.classList.add('none');
+        syncIcon.forEach(el => el.classList.add('none'));
 
         Toastify({
 			text: "Sauvegarde sur github réussi !",
@@ -164,9 +168,12 @@ saveGithubBtn?.addEventListener("click", async function() {
 		}).showToast();
     } catch (err) {
         this.classList.remove('disabled');
+        publishGithubBtn.classList.remove('disabled');
         githubIcon.classList.remove('none');
-        syncIcon.classList.add('none');
+        syncIcon.forEach(el => el.classList.add('none'));
+
         console.error(err);
+
         Toastify({
 			text: "Une erreur est survenue lors de la sauvegarde.",
 			className: "error",
@@ -182,6 +189,8 @@ saveGithubBtn?.addEventListener("click", async function() {
 })
 
 // BOUTON RETOUR =========================== //
-document.querySelector("[data-come-back]").addEventListener("click", () => {
-    history.back();
-});
+document.querySelectorAll("[data-come-back]").forEach(el => {
+    el.addEventListener("click", () => {
+        history.back();
+    });
+})

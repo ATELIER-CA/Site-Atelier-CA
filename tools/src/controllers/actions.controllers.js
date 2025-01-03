@@ -178,16 +178,16 @@ export const add_projet = async (req, res) => {
 
 export const save_on_github = async (req, res) => {
     try {
+        process.chdir(gitDir);
+
         let action = 'SAVE with CMS';
 
-        // const { deploy } = req.query;
-        // if(deploy) {
-        //     action = 'PUBLISH with CMS - [deploy]';
-        // }
+        const { deploy } = req.query;
+        if(deploy) {
+            // action = 'PUBLISH with CMS - [deploy]';
+            action = 'TEST - PUBLISH with CMS';
+        }
 
-        // const scriptPath = path.join(gitDir, 'saveScript.sh');
-
-        process.chdir(gitDir);
 
         // Vérifier s'il y a des modifications avant d'exécuter les commandes Git
         exec('git status --porcelain', (error, stdout, stderr) => {
