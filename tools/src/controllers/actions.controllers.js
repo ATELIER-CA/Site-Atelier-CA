@@ -13,7 +13,7 @@ const sliderImgPath = path.join(__dirname, '../../../assets/images/slider');
 
 import { synchronizeImgProject } from '../helpers/sync.js';
 const gitDir = path.join(__dirname, '../../../');
-
+const versionPath = path.join(__dirname, "../../../version.json");
 
 export const synchro = async (req, res) => {
     try {
@@ -188,19 +188,16 @@ export const save_on_github = async (req, res) => {
             action = 'TEST - PUBLISH with CMS';
         }
 
-
         // Vérifier s'il y a des modifications avant d'exécuter les commandes Git
         exec('git status --porcelain', (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error checking git status: ${error.message}`);
                 return res.status(500).json({ error: error.message });
             }
-
             if (stderr) {
                 console.error(`Git status stderr: ${stderr}`);
                 return res.status(500).json({ error: stderr });
             }
-
             if (stdout.trim() === '') {
                 return res.status(200).json({ message: 'Nothing to commit, working directory clean' });
             }
@@ -218,7 +215,7 @@ export const save_on_github = async (req, res) => {
                         return res.status(500).json({ error: error.message });
                     }
 
-                    exec('git push', (error, stdout, stderr) => {
+                    exec('git push', async(error, stdout, stderr) => {
                         if (error) {
                             console.error(`Error pushing: ${error.message}`);
                             return res.status(500).json({ error: error.message });
@@ -229,7 +226,13 @@ export const save_on_github = async (req, res) => {
                             return res.status(500).json({ error: stderr });
                         }
 
-                        console.log(`Git operations completed successfully: ${stdout}`);
+                        console.log('Git save successfully');
+                        const call = await readFile(versionPath, 'utf-8');
+                        const config = JSON.parse(call);
+                        await writeFile(versionPath, JSON.stringify({
+                            version: config.version+1
+                        }, null, 4), 'utf-8');
+
                         res.status(200).json({ output: stdout });
                     });
                 });

@@ -1,9 +1,13 @@
-const v = 2;
+let v = 1;
 
 document.addEventListener('DOMContentLoaded', async () => {
     // const blocProject = document.querySelector('.bloc-projet');
     // Charger les données JSON
     const projets = await loadProjets();
+
+    const call = await fetch('../version.json');
+    const config = await call.json();
+    v = config.version;
 
     // Affichage initial des cartes
     showProjectCards(projets);
@@ -28,7 +32,7 @@ async function loadProjets() {
 }
 
 // Fonction pour afficher les cartes de projet
-function showProjectCards(projets) {
+async function showProjectCards(projets) {
     const blocProject = document.querySelector('.bloc-projet');
     blocProject.innerHTML = '';
     const reverseData = projets.reverse();

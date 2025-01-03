@@ -144,8 +144,9 @@ const saveGithubBtn = document.querySelector("[data-save-gh]");
 const publishGithubBtn = document.querySelector("[data-publish-gh]");
 
 const githubIcon = saveGithubBtn.querySelector(".fa-github");
-const githubIconAlt = saveGithubBtn.querySelector(".fa-github-alt");
+const githubIconAlt = publishGithubBtn.querySelector(".fa-github-alt");
 const syncIcon = saveGithubBtn.querySelectorAll(".fa-sync");
+const syncIconAlt = publishGithubBtn.querySelectorAll(".fa-sync");
 
 saveGithubBtn?.addEventListener("click", async function() {
     try {
@@ -199,19 +200,19 @@ publishGithubBtn?.addEventListener("click", async function() {
     try {
         this.classList.add('disabled');
         saveGithubBtn.classList.add('disabled');
-        githubIcon.classList.add('none');
-        syncIcon.forEach(el => el.classList.remove('none'));
+        githubIconAlt.classList.add('none');
+        syncIconAlt.forEach(el => el.classList.remove('none'));
 
         const call = await fetch("/save?deploy=true");
         const resp = await call.json();
 
         this.classList.remove('disabled');
         saveGithubBtn.classList.remove('disabled');
-        githubIcon.classList.remove('none');
-        syncIcon.forEach(el => el.classList.add('none'));
+        githubIconAlt.classList.remove('none');
+        syncIconAlt.forEach(el => el.classList.add('none'));
 
         Toastify({
-			text: "Sauvegarde sur github réussi. Déploiement en cours...",
+			text: "Sauvegarde sur github réussi ! Déploiement en cours...",
 			className: "success",
 			duration: 5000,
 			newWindow: true,
@@ -224,8 +225,8 @@ publishGithubBtn?.addEventListener("click", async function() {
     } catch (err) {
         this.classList.remove('disabled');
         saveGithubBtn.classList.remove('disabled');
-        githubIcon.classList.remove('none');
-        syncIcon.forEach(el => el.classList.add('none'));
+        githubIconAlt.classList.remove('none');
+        syncIconAlt.forEach(el => el.classList.add('none'));
 
         console.error(err);
 
