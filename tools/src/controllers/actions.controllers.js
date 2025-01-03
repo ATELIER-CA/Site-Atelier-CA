@@ -185,10 +185,11 @@ export const save_on_github = async (req, res) => {
         //     action = 'PUBLISH with CMS - [deploy]';
         // }
 
-        const scriptPath = path.join(gitDir, 'saveScript.sh');
+        // const scriptPath = path.join(gitDir, 'saveScript.sh');
 
         process.chdir(gitDir);
 
+        // Vérifier s'il y a des modifications avant d'exécuter les commandes Git
         exec('git status --porcelain', (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error checking git status: ${error.message}`);
@@ -204,22 +205,35 @@ export const save_on_github = async (req, res) => {
                 return res.status(200).json({ message: 'Nothing to commit, working directory clean' });
             }
 
-            // Exécuter le script
-            const command = process.platform === 'win32' ? `bash ${scriptPath} "${action}"` : `sh ${scriptPath} "${action}"`;
-            exec(command, (error, stdout, stderr) => {
+            // Exécuter les commandes Git
+            exec('git add .', (error, stdout, stderr) => {
                 if (error) {
-                    console.error(`Error executing script: ${error.message}`);
+                    console.error(`Error adding files: ${error.message}`);
                     return res.status(500).json({ error: error.message });
                 }
 
-                // Vérifier si stderr contient des messages d'erreur réels
-                if (stderr && !/To https:\/\/github\.com\/ATELIER-CA\/Site-Atelier-CA\.git/.test(stderr)) {
-                    console.error(`Script stderr: ${stderr}`);
-                    return res.status(500).json({ error: stderr });
-                }
+                exec(`git commit -m "${action}"`, (error, stdout, stderr) => {
+                    if (error) {
+                        console.error(`Error committing: ${error.message}`);
+                        return res.status(500).json({ error: error.message });
+                    }
 
-                console.log(`saveScript : ${stdout}`);
-                res.status(200).json({ output: stdout });
+                    exec('git push', (error, stdout, stderr) => {
+                        if (error) {
+                            console.error(`Error pushing: ${error.message}`);
+                            return res.status(500).json({ error: error.message });
+                        }
+
+                        // Vérifier si stderr contient des messages d'erreur réels
+                        if (stderr && !/To https:\/\/github\.com\/ATELIER-CA\/Site-e-Atelier-CA\.git/.test(stderr)) {
+                            console.error(`Script stderr: ${stderr}`);
+                            return res.status(500).json({ error: stderr });
+                        }
+
+                        console.log(`Git operations completed successfully: ${stdout}`);
+                        res.status(200).json({ output: stdout });
+                    });
+                });
             });
         });
     } catch (err) {
