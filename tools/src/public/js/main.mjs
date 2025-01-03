@@ -135,17 +135,19 @@ inputFile?.addEventListener("change", async(e) => {
 // BOUTON TO SAVE ON GITHUB AND DELOY ==================== //
 const saveGithubBtn = document.querySelector("[data-save-gh]");
 
-saveGithubBtn?.addEventListener("click", async() => {
+saveGithubBtn?.addEventListener("click", async function() {
     const githubIcon = saveGithubBtn.querySelector(".fa-github");
     const syncIcon = saveGithubBtn.querySelector(".fa-sync-alt");
 
     try {
         githubIcon.classList.add('none');
         syncIcon.classList.remove('none');
+        this.classList.add('disabled');
 
         const call = await fetch("/save");
         const resp = await call.json();
 
+        this.classList.remove('disabled');
         githubIcon.classList.remove('none');
         syncIcon.classList.add('none');
 
@@ -161,6 +163,7 @@ saveGithubBtn?.addEventListener("click", async() => {
 			onClick: () => {},
 		}).showToast();
     } catch (err) {
+        this.classList.remove('disabled');
         githubIcon.classList.remove('none');
         syncIcon.classList.add('none');
         console.error(err);

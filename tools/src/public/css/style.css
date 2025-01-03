@@ -160,6 +160,11 @@ textarea {
     display: none !important;
 }
 
+.disabled {
+    pointer-events: none; /* Empêche les interactions */
+    opacity: 0.8; /* Change l'apparence pour indiquer qu'il est désactivé */
+}
+
 input.failed,
 select.failed {
     border: 2px solid red;
