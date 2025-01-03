@@ -136,9 +136,18 @@ inputFile?.addEventListener("change", async(e) => {
 const saveGithubBtn = document.querySelector("[data-save-gh]");
 
 saveGithubBtn?.addEventListener("click", async() => {
+    const githubIcon = saveGithubBtn.querySelector(".fa-github");
+    const syncIcon = saveGithubBtn.querySelector(".fa-sync-alt");
+
     try {
+        githubIcon.classList.add('none');
+        syncIcon.classList.remove('none');
+
         const call = await fetch("/save");
         const resp = await call.json();
+
+        githubIcon.classList.remove('none');
+        syncIcon.classList.add('none');
 
         Toastify({
 			text: "Sauvegarde sur github réussi !",
@@ -152,6 +161,8 @@ saveGithubBtn?.addEventListener("click", async() => {
 			onClick: () => {},
 		}).showToast();
     } catch (err) {
+        githubIcon.classList.remove('none');
+        syncIcon.classList.add('none');
         console.error(err);
         Toastify({
 			text: "Une erreur est survenue lors de la sauvegarde.",

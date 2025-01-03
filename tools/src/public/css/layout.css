@@ -130,3 +130,19 @@ body {
         padding: 20px;
     }
 }
+
+
+/* Définir l'animation de rotation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Appliquer l'animation à la classe .fa-sync-alt */
+.fa-sync-alt {
+    animation: spin 2s linear infinite;
+}
