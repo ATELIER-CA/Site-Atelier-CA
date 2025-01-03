@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Charger les données JSON
     const projets = await loadProjets();
 
-    const call = await fetch('../version.json');
+    const call = await fetch('./../version.json');
     const config = await call.json();
     v = config.version;
 
