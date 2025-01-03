@@ -184,8 +184,7 @@ export const save_on_github = async (req, res) => {
 
         const { deploy } = req.query;
         if(deploy) {
-            // action = 'PUBLISH with CMS - [deploy]';
-            action = 'TEST - PUBLISH with CMS';
+            action = 'PUBLISH with CMS - [deploy]';
         }
 
         // Vérifier s'il y a des modifications avant d'exécuter les commandes Git
