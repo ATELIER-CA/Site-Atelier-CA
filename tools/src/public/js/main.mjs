@@ -132,6 +132,13 @@ inputFile?.addEventListener("change", async(e) => {
     }
 });
 
+// BOUTON RETOUR =========================== //
+document.querySelectorAll("[data-come-back]").forEach(el => {
+    el.addEventListener("click", () => {
+        history.back();
+    });
+});
+
 // BOUTON TO SAVE ON GITHUB AND DELOY ==================== //
 const saveGithubBtn = document.querySelector("[data-save-gh]");
 const publishGithubBtn = document.querySelector("[data-publish-gh]");
@@ -188,9 +195,50 @@ saveGithubBtn?.addEventListener("click", async function() {
     }
 })
 
-// BOUTON RETOUR =========================== //
-document.querySelectorAll("[data-come-back]").forEach(el => {
-    el.addEventListener("click", () => {
-        history.back();
-    });
+publishGithubBtn?.addEventListener("click", async function() {
+    try {
+        this.classList.add('disabled');
+        saveGithubBtn.classList.add('disabled');
+        githubIcon.classList.add('none');
+        syncIcon.forEach(el => el.classList.remove('none'));
+
+        const call = await fetch("/save?deploy=true");
+        const resp = await call.json();
+
+        this.classList.remove('disabled');
+        saveGithubBtn.classList.remove('disabled');
+        githubIcon.classList.remove('none');
+        syncIcon.forEach(el => el.classList.add('none'));
+
+        Toastify({
+			text: "Sauvegarde sur github réussi. Déploiement en cours...",
+			className: "success",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
+    } catch (err) {
+        this.classList.remove('disabled');
+        saveGithubBtn.classList.remove('disabled');
+        githubIcon.classList.remove('none');
+        syncIcon.forEach(el => el.classList.add('none'));
+
+        console.error(err);
+
+        Toastify({
+			text: "Une erreur est survenue lors de la sauvegarde.",
+			className: "error",
+			duration: 5000,
+			newWindow: true,
+			close: false,
+			gravity: "bottom",
+			position: "left",
+			stopOnFocus: true,
+			onClick: () => {},
+		}).showToast();
+    }
 })

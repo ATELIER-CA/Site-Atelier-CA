@@ -224,7 +224,6 @@ export const save_on_github = async (req, res) => {
                             return res.status(500).json({ error: error.message });
                         }
 
-                        // Vérifier si stderr contient des messages d'erreur réels
                         if (stderr && !stderr.includes('To github.com:ATELIER-CA/Site-Atelier-CA.git')) {
                             console.error(`Script stderr: ${stderr}`);
                             return res.status(500).json({ error: stderr });
