@@ -225,10 +225,14 @@ export const save_on_github = async (req, res) => {
                         }
 
                         // Vérifier si stderr contient des messages d'erreur réels
-                        if (stderr && !/To https:\/\/github\.com\/ATELIER-CA\/Site-e-Atelier-CA\.git/.test(stderr)) {
-                            console.error(`Script stderr: ${stderr}`);
-                            return res.status(500).json({ error: stderr });
+                        if (stderr) {
+                            const gitPushMessage = /To https:\/\/github\.com\/ATELIER-CA\/Site-Atelier-CA\.git/.test(stderr);
+                            if (!gitPushMessage) {
+                                console.error(`Script stderr: ${stderr}`);
+                                return res.status(500).json({ error: stderr });
+                            }
                         }
+
 
                         console.log(`Git operations completed successfully: ${stdout}`);
                         res.status(200).json({ output: stdout });
