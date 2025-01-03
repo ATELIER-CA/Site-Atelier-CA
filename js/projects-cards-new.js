@@ -5,9 +5,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Charger les données JSON
     const projets = await loadProjets();
 
-    const call = await fetch('./../version.json');
-    const config = await call.json();
-    v = config.version;
+    if(window.location.hostname === "atelier-ca.github.io") {
+        const call = await fetch('https://atelier-ca.github.io/Site-Atelier-CA/version.json');
+        const config = await call.json();
+        v = config.version;
+    } else {
+        const call = await fetch('../version.json');
+        const config = await call.json();
+        v = config.version;
+    }
 
     // Affichage initial des cartes
     showProjectCards(projets);
