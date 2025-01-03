@@ -189,7 +189,6 @@ export const save_on_github = async (req, res) => {
 
         process.chdir(gitDir);
 
-        // Vérifier s'il y a des modifications avant d'exécuter le script
         exec('git status --porcelain', (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error checking git status: ${error.message}`);
@@ -212,10 +211,13 @@ export const save_on_github = async (req, res) => {
                     console.error(`Error executing script: ${error.message}`);
                     return res.status(500).json({ error: error.message });
                 }
+
+                // Vérifier si stderr contient des messages d'erreur réels
                 if (stderr && !/To https:\/\/github\.com\/ATELIER-CA\/Site-Atelier-CA\.git/.test(stderr)) {
                     console.error(`Script stderr: ${stderr}`);
                     return res.status(500).json({ error: stderr });
                 }
+
                 console.log(`saveScript : ${stdout}`);
                 res.status(200).json({ output: stdout });
             });
