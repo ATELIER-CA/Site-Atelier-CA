@@ -187,6 +187,12 @@ export const save_on_github = async (req, res) => {
             action = 'PUBLISH with CMS - [deploy]';
         }
 
+        const call = await readFile(versionPath, 'utf-8');
+        const config = JSON.parse(call);
+        await writeFile(versionPath, JSON.stringify({
+            version: config.version+1
+        }, null, 4), 'utf-8');
+
         // Vérifier s'il y a des modifications avant d'exécuter les commandes Git
         exec('git status --porcelain', (error, stdout, stderr) => {
             if (error) {
@@ -220,18 +226,12 @@ export const save_on_github = async (req, res) => {
                             return res.status(500).json({ error: error.message });
                         }
 
-                        if (stderr && !stderr.includes('To github.com:ATELIER-CA/Site-Atelier-CA.git')) {
+                        if (stderr && !stderr.includes("To https://github.com/ATELIER-CA/Site-Atelier-CA.git")) {
                             console.error(`Script stderr: ${stderr}`);
                             return res.status(500).json({ error: stderr });
                         }
 
                         console.log('Git save successfully');
-                        const call = await readFile(versionPath, 'utf-8');
-                        const config = JSON.parse(call);
-                        await writeFile(versionPath, JSON.stringify({
-                            version: config.version+1
-                        }, null, 4), 'utf-8');
-
                         res.status(200).json({ output: stdout });
                     });
                 });
