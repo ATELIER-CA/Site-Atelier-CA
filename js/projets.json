@@ -345,10 +345,14 @@
             "mimt201504.jpg",
             "mimt201505.jpg",
             "mimt201506.jpg",
-            "mimt201507.jpg"
+            "mimt201507.jpg",
+            "mimt201508.jpg",
+            "mimt201509.jpg",
+            "mimt201510.jpg"
         ],
         "tag": "mimt2015",
-        "image": "mimt201500.jpg"
+        "image": "mimt201500.jpg",
+        "desc": ""
     },
     {
         "id": 18,
