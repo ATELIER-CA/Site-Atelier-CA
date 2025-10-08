@@ -293,7 +293,7 @@
         "lieu": "Saint-Mexant (19)",
         "calendar": "Livré en 2013",
         "moa": "Privé",
-        "budget": "372 000 € TTC",
+        "budget": "259 000 € TTC",
         "surface": "128 m²",
         "type": "MAISON",
         "photos": [
@@ -307,7 +307,8 @@
             "mima201308.jpg"
         ],
         "tag": "mima2013",
-        "image": "mima201300.jpg"
+        "image": "mima201300.jpg",
+        "desc": ""
     },
     {
         "id": 16,
@@ -335,7 +336,7 @@
         "lieu": "Naves (19)",
         "calendar": "Livré en 2015",
         "moa": "Privé",
-        "budget": "259 000 € TTC",
+        "budget": "372 000 € TTC",
         "surface": "133 m²",
         "type": "MAISON",
         "photos": [
