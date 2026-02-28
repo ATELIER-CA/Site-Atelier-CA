@@ -31,7 +31,7 @@
     /* padding-left: 22px; */
 }
 
-.agence section p {
+.agence section p:not(.profil div p) {
     display: block;
     text-align: justify;
     width: 80%;
@@ -44,11 +44,12 @@
 .agence .employees {
     height: auto;
     width: 80%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 220px);
-    justify-content: center;
-    gap: 60px;
-    margin: 0 auto;
+    justify-content: space-between;
+    column-gap: 10px;
+    row-gap: 60px;
     margin-bottom: 100px;
 }
 

@@ -48,7 +48,6 @@
 
 }
 
-
 /*-PETIT-LAPTOP--SMARTPHONE-----------*/
 @media screen and (max-width: 1024px) {
     #projects {
@@ -299,7 +298,7 @@
     }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1100px) {
     .agence .employees {
         grid-template-columns: repeat(2, 220px);
     }
@@ -346,8 +345,21 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .agence .employees {
+        grid-template-columns: repeat(3, 220px);
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .agence .employees {
+        grid-template-columns: repeat(2, 220px);
+    }
+}
+
 @media screen and (max-width: 650px) {
     .agence .employees {
+        width: 98%;
         grid-template-columns: 1fr;
         gap: 40px;
     }
