@@ -6,12 +6,12 @@
     height: 100vh;
     width: 100%;
     min-width: 320px;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .slider {
     position: absolute;
-    overflow: hidden;
+    overflow: clip;
     height: 100vh;
     width: 900%;
     display: flex;
@@ -20,7 +20,7 @@
 }
 
 .slide {
-    overflow: hidden;
+    overflow: clip;
     background-color: white;
     height: 100%;
     width: 100%;

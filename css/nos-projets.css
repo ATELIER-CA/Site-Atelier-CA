@@ -31,7 +31,7 @@
 .projet {
     cursor: pointer;
     position: relative;
-    overflow: hidden;
+    overflow: clip;
     height: 300px;
     width: 100%;
     max-width: 30%;
