@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 70px;
+    gap: 100px;
     flex-wrap: wrap;
     flex-shrink: 1;
     margin-bottom: 40px;
