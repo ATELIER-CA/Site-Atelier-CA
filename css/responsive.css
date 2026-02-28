@@ -300,6 +300,10 @@
 }
 
 @media screen and (max-width: 760px) {
+    .agence .employees {
+        grid-template-columns: repeat(2, 220px);
+    }
+
     #plan_agence {
         flex-direction: column;
     }
@@ -344,6 +348,7 @@
 
 @media screen and (max-width: 650px) {
     .agence .employees {
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
