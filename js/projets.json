@@ -690,5 +690,42 @@
             "idsc2405.jpg"
         ],
         "image": "idsc2400.jpg"
+    },
+    {
+        "id": 32,
+        "title": "RENOVATION CHATEAU DE BLANAT",
+        "type": "INDUSTRIEL",
+        "lieu": "Saint-Michel de Bannières (46)",
+        "calendar": "Réception 2026",
+        "moa": "SAS Château de Blanat",
+        "desc": "",
+        "budget": "NC",
+        "surface": "",
+        "tag": "château de blanat",
+        "photos": []
+    },
+    {
+        "id": 33,
+        "title": "RENOVATION CHATEAU DE BLANAT",
+        "type": "INDUSTRIEL",
+        "lieu": "Saint-Michel de Bannières (46)",
+        "calendar": "Livré en 2026",
+        "moa": "SAS Château de Blanat",
+        "desc": "",
+        "budget": "NC",
+        "surface": "NC",
+        "tag": "chbla2026",
+        "image": "chbla202600.jpg",
+        "photos": [
+            "chbla202601.jpg",
+            "chbla202602.jpg",
+            "chbla202603.jpg",
+            "chbla202604.jpg",
+            "chbla202605.jpg",
+            "chbla202606.jpg",
+            "chbla202607.jpg",
+            "chbla202608.jpg",
+            "chbla202609.jpg"
+        ]
     }
 ]
